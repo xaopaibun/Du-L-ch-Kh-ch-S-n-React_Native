@@ -14,6 +14,7 @@ import {
   FlatList,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useDispatch } from 'react-redux';
 import DiaDiem from '../Data/DiaDiem';
 import DiaDiemTheoMua from '../Data/DiaDiemTheoMua';
 import KS_RS from '../Data/KS_RS';
@@ -26,6 +27,7 @@ const Home =  ({navigation}) => {
   const [Data_DiaDiemTheoMua, setData_DiaDiemTheoMua] = React.useState();
   const [Data_TraiNghiem, setData_TraiNghiem] = React.useState();
   const [Data_KS_RS, setData_KS_RS] = React.useState();
+  const dispatch = useDispatch();
     React.useEffect(() =>{
         setData_LichTrinh(LichTrinh);
         setData_DiaDiem(DiaDiem);
@@ -152,7 +154,7 @@ const Home =  ({navigation}) => {
 
             <TextInput style={{flex: 8}} placeholder='Bạn muốn đi đâu' placeholderTextColor='#B6B6B6'/>
         </View>
-        <View style={{height: 50}}></View>
+        <View style={{height: 30}}></View>
         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
             <TouchableOpacity style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 25, flex: 1, marginHorizontal: 16,justifyContent:'center', alignItems:'center'}}>
                 <Text style={{color:'#FFFFFF', fontSize: 14, lineHeight: 17}}>Xem gợi ý</Text>
@@ -174,7 +176,13 @@ const Home =  ({navigation}) => {
         </ScrollView>
         <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Lịch trình gần đây</Text>
-            <TouchableOpacity onPress={navigation.navigate('ScreenLichTrinh')}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
+            <TouchableOpacity 
+            onPress={ () => {
+                dispatch({type : 'DuLieuLichTrinh', data: Data_LichTrinh})
+                navigation.navigate('ScreenLichTrinh');
+            }
+            }
+            ><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
         </View>
 
         <FlatList

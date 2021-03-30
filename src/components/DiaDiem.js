@@ -12,12 +12,15 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-
-
 import { useSelector } from 'react-redux';
+
+
+
+
 const ScreenLichTrinh =  ({navigation}) => {
-    const Data_LichTrinh = useSelector(state => state.data_diadiem);
-   
+    const [Data_LichTrinh1, setData_LichTrinh1] = React.useState();
+    const Data = useSelector(state => state.Data);
+  
     const renderItemLichTrinh = ({ item }) => (
         <View style={{height: 300,  backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 20}}>
         <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
@@ -66,11 +69,11 @@ const ScreenLichTrinh =  ({navigation}) => {
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
-                <TouchableOpacity onPress={() => navigation.goBack()} style={{flex:0.3}}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
+                <View style={{flex:0.3, justifyContent:'center', alignItems:'center'}}><TouchableOpacity onPress={() => navigation.goBack()}><Image source={require('../assets/images/back.png')}  style={{width: 7, marginRight: 12}}/></TouchableOpacity></View>
                <View style={{flex:0.7}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lịch Trình Gần Đây</Text></View>
             </View>
             <FlatList
-                data = {Data_LichTrinh}
+                data = {Data}
                 keyExtractor={item => item.id}
                 renderItem={renderItemLichTrinh}
                 style={{padding: 16, backgroundColor: '#E5E5E5'}}

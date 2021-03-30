@@ -32,7 +32,7 @@ let LichTrinh = [
     {
         "id" : "3",
         "images" : [
-            "https://lh3.googleusercontent.com/proxy/MHNu1puD5dNVttXK8WpHrF44RyTn6igQIUfQhK92nTIwYbWjvK1fgk9jkmTq6tdUxDEvxTVR6k66T5SiJKAXkgIakCOpIds_7ypyYbfQ7YOMhnZBO3AWRMvzCO-keHDk79htqkcPsUH7Yv_k80FAzrw2sA",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/12/87/bd/halong-bay.jpg?w=500&h=300&s=1",
             "https://halongdolphin.com/wp-content/uploads/2019/02/vinh-ha-long-halongdolphin-1140x540.jpg",
             "https://www.bhayacruises.com/styles/400x266/photos/shares/General/02.%20Our%20Cruises/Bhaya%20Classic/Cruise%20Attraction/halong-bay.jpg",
             "https://onetour.vn/Media/Images/OneTour/tin-tuc/nhung-dieu-co-the-ban-chua-biet-ve-vinh-ha-long-10.jpg",     

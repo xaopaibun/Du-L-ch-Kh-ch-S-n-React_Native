@@ -1,7 +1,7 @@
 let DiaDiemTheoMua = [
     {
         "id" : "1",
-        "image" :"https://lh3.googleusercontent.com/proxy/kHXL1cbdOf53wVyZymJ5S8zlr1blF8bzqw0tT_jXv7ZAwcoPlwCXexvHWKB0aUVhhieiVQqSEsVrnO_7Wjm6p5-ybhl1RAo9r6w2H6cBcIu4kcc1",  
+        "image" :"https://www.hoteljob.vn/files/Anh-Hoteljob-Thanhvi/Thang12-2019/sapa-va-noi-that-vong-trong-mat-du-khach-quoc-te-01.png",  
         "TenDiaDiem" : "SaPa",
     },
     {
