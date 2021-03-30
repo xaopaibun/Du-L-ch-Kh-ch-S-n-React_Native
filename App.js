@@ -1,11 +1,9 @@
-
 import React from 'react';
 
-
-import Home from './src/components/Home'
+import RootStack from './src/navigator/RootStack';
 const App =  () => {
   return (
-   <Home />
+   <RootStack/>
   );
 };
 
