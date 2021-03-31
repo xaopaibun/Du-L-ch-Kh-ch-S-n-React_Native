@@ -17,9 +17,9 @@ import { useSelector } from 'react-redux';
 
 
 
-const ScreenDiaDiemPhoBien =  ({navigation}) => {
+const ScreenDiemDenThang12 =  ({navigation}) => {
     
-    const Data = useSelector(state => state.data_diadiemphobien);
+    const Data = useSelector(state => state.data_diadiemthang12);
     const renderItemDiaDiem = ({ item }) => (
         <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}}>
             <ImageBackground source={{uri : item.image}} resizeMode="stretch" style={{ height: 180}} />
@@ -40,7 +40,7 @@ const ScreenDiaDiemPhoBien =  ({navigation}) => {
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 25, flexDirection:'row', marginVertical: 10, backgroundColor: '#ffffff', alignItems:'center'}}>
                 <View style={{flex:0.1, justifyContent:'center', alignItems:'center'}}><TouchableOpacity onPress={() => navigation.goBack()}><Image source={require('../assets/images/back.png')}  style={{width: 7, marginRight: 12}}/></TouchableOpacity></View>
-               <View style={{flex:0.8, alignItems:'center'}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Địa Điểm Phổ Biến</Text></View>
+               <View style={{flex:0.8, alignItems:'center'}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Điểm đến tháng 12</Text></View>
             </View>
             <FlatList
                 data = {Data}
@@ -51,4 +51,4 @@ const ScreenDiaDiemPhoBien =  ({navigation}) => {
         </SafeAreaView>
     );
 }
-export default ScreenDiaDiemPhoBien;
+export default ScreenDiemDenThang12;

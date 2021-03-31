@@ -18,6 +18,11 @@ let DiaDiem = [
         "id" : "4",
         "image" :"https://tuoitredoisong.net/wp-content/uploads/2019/09/chua-tam-chuc-o-dau.jpg",  
         "TenDiaDiem" : "Tràng an, Ninh Bình",
+    },
+    {
+        "id" : "5",
+        "image" :"https://wecheckin.vn/wp-content/uploads/2020/03/doi-dua-tam-diep-o-dau-wecheckin-1.jpg",  
+        "TenDiaDiem" : "Đồi Dứa Tam Điệp, Ninh Bình",
     }
     
 ];
