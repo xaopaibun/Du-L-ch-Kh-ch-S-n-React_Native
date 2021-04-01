@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,Image,TextInput,ImageBackground,View,TouchableOpacity,FlatList,} from 'react-native';
+import { onChange, set } from 'react-native-reanimated';
 const data_KQ = [
     {
         "iD" :"1",
@@ -60,12 +61,14 @@ const data_KQ = [
 ];
 const ScreenTimKiem =  ({navigation}) => {
     const [key, setkey] = React.useState('');
-    // const Timkiem = (value) =>{
-    //     setkey(value);
-    //     data_KQ.filter((i) => key === i.Ten);
-    //     console.log(data_KQ);
-    // }
-    // const [KQ, setKQ] = React.useState([]);
+    const onChange = (key) =>{
+        setkey(key);
+       let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
+        
+        console.log(M);
+        
+    }
+    const [KQ, setKQ] = React.useState([]);
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
@@ -73,14 +76,14 @@ const ScreenTimKiem =  ({navigation}) => {
                     <TouchableOpacity style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={require('../assets/images/timkiem.png')}  style={{width: 12, height: 12}}/>
                     </TouchableOpacity>
-                    <TextInput onChangeText={(val) => setkey(val)} style={{flex: 8}} placeholder='Bạn muốn đi đâu' placeholderTextColor='#B6B6B6'/>
+                    <TextInput onChangeText={(val) => onChange(val)} style={{flex: 8}} placeholder='Bạn muốn đi đâu' placeholderTextColor='#B6B6B6'/>
                    <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{color: '#B6B6B6'}}>Huỷ</Text></TouchableOpacity>
                 </View>
                 <View style={{backgroundColor: '#F7F7F7',flex: 9}}>
                     
                         <FlatList 
                             data = {data_KQ}
-                            keyExtractor={item => item.id}
+                            keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(
                                     <View style={{marginLeft: 16, flexDirection:'row', alignItems:'center', paddingVertical: 10}}>

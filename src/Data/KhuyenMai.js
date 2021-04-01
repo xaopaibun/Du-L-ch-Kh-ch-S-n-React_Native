@@ -1,7 +1,7 @@
 let KhuyenMai = [
     {
         "id" : "1",
-        "image" : "https://lh3.googleusercontent.com/proxy/rpW-HQ27T16deh3123CDHXY57OScRrPaO_rKPeEnBtVmKHCjOdmlr_6SzIvcQnAulfWEkboETtsqQuAuQxmh3ZdyoAtI1aWMcMh7p6djlDo4_MJ2srZHIU3CioipjsYRSdIk",
+        "image" : "https://thegioidulich.com.vn/images/news/fb%20vitm-06.jpg",
         "content" :"Giảm 300K khi nhập mã MEGA để đặt khách sạn",
         "thoigian" : "Thời gian áp dụng: 1/12 - 31/12",
         "hsd" :""

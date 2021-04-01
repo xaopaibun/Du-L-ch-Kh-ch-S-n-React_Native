@@ -14,7 +14,7 @@ import {
   FlatList,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import DiaDiem from '../Data/DiaDiem';
 import DiaDiemTheoMua from '../Data/DiaDiemTheoMua';
 import KhuyenMai from '../Data/KhuyenMai';
@@ -29,6 +29,7 @@ const Home =  ({navigation}) => {
   const [Data_TraiNghiem, setData_TraiNghiem] = React.useState();
   const [Data_KS_RS, setData_KS_RS] = React.useState();
   const [Data_KM, setData_KM] = React.useState();
+  const nutButton = useSelector(state => state.nutButton);
   const dispatch = useDispatch();
     React.useEffect(() =>{
         setData_LichTrinh(LichTrinh);
@@ -123,7 +124,11 @@ const Home =  ({navigation}) => {
     </View>
       );
   return (
-    <ScrollView style={{flex: 1, backgroundColor: '#E5E5E5'}}>
+    <View style={{flex: 1, backgroundColor: '#E5E5E5', position: 'relative'}}>
+        {
+            nutButton ?  <View style={{backgroundColor: 'rgba(0, 0, 0, 0.7)', width: '100%', height: '100%',position:'absolute', top : 0, left: 0, zIndex: 9999999999}}></View> : <View></View>
+        }
+       <ScrollView>
         <StatusBar barStyle='light-content'/>
         <View style={styles.Header_Home}>
                 <ImageBackground source={require('../assets/images/Home.png')} style={{width: '100%', height: '100%', position:'relative'}} > 
@@ -260,6 +265,8 @@ const Home =  ({navigation}) => {
             style={{marginLeft: 16}}
         />
     </ScrollView>
+    <Image source={require('../assets/images/Frame7.png')}  style={{width: 89, height: 89, position: 'absolute', bottom: 10, right: 10, zIndex: 9}} />
+    </View>
   );
 };
 

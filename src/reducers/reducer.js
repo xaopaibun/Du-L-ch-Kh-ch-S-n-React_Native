@@ -13,6 +13,8 @@ const reducer = (state = initState, action) => {
             return { ...state, data_trainghiem: action.data }
         case 'DuLieuKS_RS' : 
             return { ...state, data_KS_RS: action.data }
+        case 'ACTIVE_TABVIEW':
+            return { ...state, nutButton: action.nutButton}
         default:
             return state
     }

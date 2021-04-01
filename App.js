@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RootStack from './src/navigator/RootStack';
+import RootStack from './src/navigator/stack/RootStack';
 import { Provider } from 'react-redux';
 import { createStore } from "redux";
 import reducer from './src/reducers/reducer';
