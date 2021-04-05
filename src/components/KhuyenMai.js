@@ -14,17 +14,21 @@ import {
 } from 'react-native';
 
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
 const ScreenKhuyenMai =  ({navigation}) => {
+    const dispatch = useDispatch();
     const Data_KhuyenMai= useSelector(state => state.data_khuyenmai);
-   
     const renderItemKhuyenMai = ({ item }) => (
-        <TouchableOpacity style={{height: 215, borderRadius: 5, overflow:'hidden', backgroundColor: '#ffffff', marginBottom: 16}}>
+        <TouchableOpacity onPress={() =>{
+            dispatch({type : 'ChiTietKM', item : item});
+            navigation.navigate('ChiTietKM');
+        }} style={{height: 215, borderRadius: 5, overflow:'hidden', backgroundColor: '#ffffff', marginBottom: 16}}>
             <Image source={{uri : item.image}} resizeMode="stretch" style={{ height: 150,borderRadius: 5}}/>
             <View style={{padding: 16}}>
                 <Text style={{fontSize: 13, fontWeight: '500'}} numberOfLines={1}>{item.content}</Text>
                 <View style={{justifyContent:'space-between', flexDirection:'row'}}>
-                    <Text style={{fontSize: 12, color:'#575757'}} numberOfLines={1}>{item.thoigian}</Text>
+                    <Text style={{fontSize: 12, color:'#575757'}} numberOfLines={1}>Thời gian áp dụng: {item.thoigian}</Text>
                     <Text style={{fontSize: 10, color:'#FF2424'}} numberOfLines={1}>{item.hsd}</Text>
                 </View>
             </View>

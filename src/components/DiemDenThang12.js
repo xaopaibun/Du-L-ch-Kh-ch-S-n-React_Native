@@ -12,17 +12,20 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import { useSelector } from 'react-redux';
 
+import { useDispatch , useSelector} from 'react-redux';
 
 
 
 const ScreenDiemDenThang12 =  ({navigation}) => {
-    
+    const dispatch = useDispatch();
     const Data = useSelector(state => state.data_diadiemthang12);
     const renderItemDiaDiem = ({ item }) => (
-        <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}}>
-            <ImageBackground source={{uri : item.image}} resizeMode="stretch" style={{ height: 180}} />
+        <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}} onPress={() =>{
+            dispatch({type : 'ChiTietDiaDiem', data: item})
+            navigation.navigate('ScreenCTDiaDiem');
+        }}>
+            <ImageBackground source={{uri : item.image}} resizeMode="stretch" style={{ height: 180}} /> 
             <View style={{backgroundColor:'rgba(0, 0, 0, 0.25)', height: 180,width: '100%', position:'absolute', top : 0, left: 0, zIndex: 1}} />
             <View style={{height: 180,width: '100%', position:'absolute', top : 0, left: 0, zIndex: 2}}>
                 <View style={{ justifyContent:'center', alignItems:'center', flex: 0.8}}>

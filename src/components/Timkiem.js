@@ -59,15 +59,15 @@ const data_KQ = [
         "Content":"Kỳ quan thế giới"
     }
 ];
-const ScreenTimKiem =  ({navigation}) => {
-    const [key, setkey] = React.useState('');
-    const onChange = (key) =>{
-        setkey(key);
-       let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
+const ScreenTimKiem =  ({navigation}, props) => {
+    //const [key, setkey] = React.useState('');
+    // const onChange = (key) =>{
+    //     setkey(key);
+    //    let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
         
-        console.log(M);
+    //     console.log(M);
         
-    }
+    // }
     const [KQ, setKQ] = React.useState([]);
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
@@ -76,12 +76,12 @@ const ScreenTimKiem =  ({navigation}) => {
                     <TouchableOpacity style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={require('../assets/images/timkiem.png')}  style={{width: 12, height: 12}}/>
                     </TouchableOpacity>
-                    <TextInput onChangeText={(val) => onChange(val)} style={{flex: 8}} placeholder='Bạn muốn đi đâu' placeholderTextColor='#B6B6B6'/>
+                    <TextInput onChangeText={(val) => onChange(val)} style={{flex: 8}} placeholder={props.Tieude} placeholderTextColor='#B6B6B6'/>
                    <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{color: '#B6B6B6'}}>Huỷ</Text></TouchableOpacity>
                 </View>
                 <View style={{backgroundColor: '#F7F7F7',flex: 9}}>
                     
-                        <FlatList 
+                        {/* <FlatList 
                             data = {data_KQ}
                             keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
@@ -95,7 +95,7 @@ const ScreenTimKiem =  ({navigation}) => {
                                     </View>
                                 );
                             }}
-                        />
+                        /> */}
                         
                     
                 </View>

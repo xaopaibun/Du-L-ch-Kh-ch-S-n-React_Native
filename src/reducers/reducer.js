@@ -15,6 +15,11 @@ const reducer = (state = initState, action) => {
             return { ...state, data_KS_RS: action.data }
         case 'ACTIVE_TABVIEW':
             return { ...state, nutButton: action.nutButton}
+        case 'ChiTietKM':
+            return { ...state, chitietKM: action.item}
+        case 'ChiTietDiaDiem':
+            return { ...state, chitietDiaDiem: action.data}
+        
         default:
             return state
     }

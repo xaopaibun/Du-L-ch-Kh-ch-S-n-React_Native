@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -38,6 +37,9 @@ const Home =  ({navigation}) => {
         setData_DiaDiemTheoMua(DiaDiemTheoMua);
         setData_KS_RS(KS_RS);
         setData_KM(KhuyenMai);
+        dispatch({type : 'DuLieuLichTrinh', data: LichTrinh})
+        dispatch({type : 'DuLieuKS_RS', data: KS_RS})
+        dispatch({type :'DuLieutrainghiem', data : TraiNghiem})
     }, []);
     const renderItemKS_RS = ({ item }) => (
         <View style={{height: 250, width: 160, marginRight: 16, justifyContent:'space-between'}}>
@@ -62,8 +64,8 @@ const Home =  ({navigation}) => {
     </View>
     );
     const renderItemDiaDiem = ({ item }) => (
-        <View style={{width: 150, height: 200, marginRight: 16}}>
-                <Image source={{uri : item.image}} style={{width: 150, height: 200, borderRadius: 5}}/>
+        <View style={{width: 150, height: 200, marginRight: 16,  borderRadius: 5, overflow: 'hidden'}}>
+                <Image source={{uri : item.image}} style={{width: 150, height: 200}}/>
                 <LinearGradient colors={['rgba(77, 77, 77, 0)','#000000']} style={{position: 'absolute', bottom: 0, zIndex: 1, height: 20, width:'100%'}}>
                     <Text style={{ color:'white', fontSize: 13, fontWeight: '600', backgroundColor:'black',  textAlign:'center'}}>{item.TenDiaDiem}</Text>
                 </LinearGradient>
@@ -141,7 +143,7 @@ const Home =  ({navigation}) => {
                         <Image source={require('../assets/images/plan.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Lịch Trình</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ScreenKhachSan')} style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
                         <Image source={require('../assets/images/hotel.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Khách Sạn</Text>
                     </TouchableOpacity>
@@ -153,7 +155,7 @@ const Home =  ({navigation}) => {
                         <Image source={require('../assets/images/combo.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Combo</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
+                    <TouchableOpacity   onPress={() => navigation.navigate('ScreenNhaHang')} style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
                         <Image source={require('../assets/images/restaurant.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Nhà Hàng</Text>
                     </TouchableOpacity>
@@ -195,7 +197,7 @@ const Home =  ({navigation}) => {
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Lịch trình gần đây</Text>
             <TouchableOpacity 
             onPress={ () => {
-                dispatch({type : 'DuLieuLichTrinh', data: Data_LichTrinh})
+              
                 navigation.navigate('ScreenLichTrinh');
             }
             }
@@ -211,7 +213,7 @@ const Home =  ({navigation}) => {
         <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Địa điểm phổ biến</Text>
             <TouchableOpacity onPress={() =>{
-                dispatch({type :'DuLieudiadiemphobien', data : Data_DiaDiem});
+             
                 navigation.navigate('ScreenDiaDiemPhoBien');
             }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
         </View>
@@ -225,7 +227,7 @@ const Home =  ({navigation}) => {
         <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Trải Nghiệm Nổi Bật</Text>
             <TouchableOpacity onPress={() =>{
-                dispatch({type :'DuLieutrainghiem', data : Data_TraiNghiem});
+           
                 navigation.navigate('ScreenTraiNghiem');
             }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
         </View>
@@ -253,7 +255,7 @@ const Home =  ({navigation}) => {
          <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Khách sạn & Resort</Text>
             <TouchableOpacity onPress={() => {
-                dispatch({type : 'DuLieuKS_RS', data: Data_KS_RS})
+               
                 navigation.navigate('ScreenKS_RS');
             }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
         </View>

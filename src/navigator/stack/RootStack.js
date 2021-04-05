@@ -12,7 +12,10 @@ import ScreenTimKiem from '../../components/Timkiem';
 import ScreenKS_RS from '../../components/KS_RS';
 import Tabview from '../Tabview/TabMain';
 const Stack = createStackNavigator();
-import 'react-native-gesture-handler';
+import ScreenKhachSan from '../../components/KhachSan';
+import ScreenNhaHang from '../../components/NhaHang';
+import ChiTietKM from '../../components/ChiTietKM';
+import ScreenCTDiaDiem from '../../components/CTDiaDiem';
 export default function RootStack() {
   return (
     <NavigationContainer>
@@ -25,6 +28,10 @@ export default function RootStack() {
         <Stack.Screen name="ScreenTraiNghiem" component={ScreenTraiNghiem} />
         <Stack.Screen name="ScreenTimKiem" component={ScreenTimKiem} />
         <Stack.Screen name="ScreenKS_RS" component={ScreenKS_RS} />
+        <Stack.Screen name="ScreenKhachSan" component={ScreenKhachSan} />
+        <Stack.Screen name="ScreenNhaHang" component={ScreenNhaHang} />
+        <Stack.Screen name="ChiTietKM" component={ChiTietKM} />
+        <Stack.Screen name="ScreenCTDiaDiem" component={ScreenCTDiaDiem} />
       </Stack.Navigator>
     </NavigationContainer>
   );
