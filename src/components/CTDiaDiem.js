@@ -12,18 +12,18 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 
 const ScreenCTDiaDiem =  ({navigation}) => {
+    const dispatch = useDispatch();
+    const Data_NhaHang = useSelector(state => state.data_NhaHang);
     const dulieu = useSelector(state => state.chitietDiaDiem);
     const Data = useSelector(state => state.data_diadiem);
     const Data_KS = useSelector(state => state.data_KS_RS);
     const Data_Trai_Nghiem= useSelector(state => state.data_trainghiem);
-    
-    console.log(dulieu);
     const renderItemTraiNghiem= ({ item }) => (
         <View style={{height: 280, width: 220, marginRight: 16}}>
             <Image source={{uri : item.image}}  style={{width: 220,height: 200, borderRadius: 5}}/>
@@ -101,7 +101,7 @@ const ScreenCTDiaDiem =  ({navigation}) => {
             <View style={{position:'relative', height: 180, width: '100%'}}>
             <Image source={{uri : dulieu.image}}  style={{height : 180,width: '100%', borderRadius: 5
         }}/>
-         <View style={{height: 315, backgroundColor: 'green', position: 'absolute',left: 0, top: 150, zIndex: 8, width: '100%'}}>
+         <View style={{height: 315,  position: 'absolute',left: 0, top: 150, zIndex: 8, width: '100%'}}>
                 <View style={{flex: 4.2, padding: 16, backgroundColor: '#ffffff',  borderTopLeftRadius: 10,borderTopRightRadius: 10 }}>
                     <Text style={{color: '#000000', fontSize: 16, fontWeight:'600'}}>{dulieu.TenDiaDiem}</Text>
                     <Text style={{color: '#3076FE', fontSize: 10, marginVertical: 6}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {dulieu.TenDiaDiem}, Việt Nam</Text>
@@ -114,7 +114,7 @@ const ScreenCTDiaDiem =  ({navigation}) => {
                     </TouchableOpacity>
                 </View>
                 <View style={{flex: 3.8}}>
-                    <Image source={require('../assets/images/daolyson.png')}  style={{width: '100%', height: '100%'}}/>
+                    <Image source={{uri : dulieu.BanDo}}  style={{width: '100%', height: '100%'}} resizeMode='stretch'/>
                 </View>
             </View>
             <TouchableOpacity onPress={() => navigation.goBack()} style={{position: 'absolute', top: 50, left: 10, zIndex: 9}}><Image source={require('../assets/images/back2.png')}  style={{width: 8, marginRight: 12}}/></TouchableOpacity>
@@ -140,20 +140,34 @@ const ScreenCTDiaDiem =  ({navigation}) => {
                 renderItem={renderItemLichTrinh}
                 horizontal
             /> 
-             <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
-            <Text style={{color: '#000000', fontWeight: 'bold'}}>Khách sạn & Resort</Text>
-            <TouchableOpacity onPress={() => {
-               
-                navigation.navigate('ScreenKS_RS');
-            }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
-        </View>
-        <FlatList
-            data = {Data_KS}
-            keyExtractor={item => item.id}
-            renderItem={renderItemKS_RS}
-            horizontal
-            style={{marginLeft: 16}}
-        />
+            <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
+                <Text style={{color: '#000000', fontWeight: 'bold'}}>Khách sạn & Resort</Text>
+                <TouchableOpacity onPress={() => {
+                
+                    navigation.navigate('ScreenKS_RS');
+                }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
+            </View>
+            <FlatList
+                data = {Data_KS}
+                keyExtractor={item => item.id}
+                renderItem={renderItemKS_RS}
+                horizontal
+                style={{marginLeft: 16}}
+            />
+            <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
+                <Text style={{color: '#000000', fontWeight: 'bold'}}>Nhà Hàng</Text>
+                <TouchableOpacity onPress={() => {
+                
+                    navigation.navigate('NhaHang');
+                }}><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
+            </View>
+            <FlatList
+                data = {Data_NhaHang}
+                keyExtractor={item => item.id}
+                renderItem={renderItemKS_RS}
+                horizontal
+                style={{marginLeft: 16}}
+            />
         <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
             <Text style={{color: '#000000', fontWeight: 'bold'}}>Trải Nghiệm Nổi Bật</Text>
             <TouchableOpacity onPress={() =>{

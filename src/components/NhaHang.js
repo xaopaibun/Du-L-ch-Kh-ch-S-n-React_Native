@@ -14,21 +14,19 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { useSelector } from 'react-redux';
-import DiaDiem from '../Data/DiaDiem';
-import KS_RS from '../Data/KS_RS';
-const ScreenNhaHang =  ({navigation}) => {
-    // const Data = useSelector(state => state.data_diadiemphobien);
-    const [Data, setData] = React.useState();
 
-    const [Data_KS_RS, setData_KS_RS] = React.useState();
-    React.useEffect(() =>{
-       
-        setData(DiaDiem);
-        setData_KS_RS(KS_RS);
-    }, []);
+import { useDispatch , useSelector} from 'react-redux';
+const ScreenNhaHang =  ({navigation}) => {
+     const Data_NhaHang = useSelector(state => state.data_NhaHang);
+    
+    const Data = useSelector(state => state.data_diadiemphobien);
+    const dispatch = useDispatch();
+ 
     const renderItemKS_RS = ({ item }) => (
-        <View style={{height: 250, width: 160, marginRight: 16, justifyContent:'space-between'}}>
+        <TouchableOpacity style={{height: 250, width: 160, marginRight: 16, justifyContent:'space-between'}} onPress={() =>{
+            dispatch({type : 'ChiTietNhaHang', data : item})
+            navigation.navigate('ScreenCTNhaHangKhachSan');
+        }}>
         <View style={{flex: 3}}>
             <Image source={{uri : item.images[0]}}  style={{width: 160,height: 150, borderRadius: 5}}/>
         </View>
@@ -47,7 +45,7 @@ const ScreenNhaHang =  ({navigation}) => {
             <Text style={{color: '#3076FE', fontSize: 10}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {item.DiaChi}</Text>
             <Text style={{fontWeight: '500', fontSize: 12, color: '#FF2424'}}>{item.Gia}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
     );
     const renderItemDiaDiem = ({ item }) => (
         <View style={{width: 150, height: 200, marginRight: 16, borderRadius: 5, overflow: 'hidden'}}>
@@ -67,7 +65,7 @@ const ScreenNhaHang =  ({navigation}) => {
                <TouchableOpacity><Image source={require('../assets/images/timkiem.png')}  style={{width: 12}}/></TouchableOpacity>
             </View>
             <ScrollView style={{backgroundColor: '#E5E5E5', flex: 1}}>
-                <TextInput placeholderTextColor='#828282' style={{backgroundColor: '#EAEAEA', paddingVertical: 8, paddingHorizontal: 10,borderRadius: 5, margin: 16, fontSize: 12}} placeholder='Bạn muốn đi đâu'/>
+                <TextInput placeholderTextColor='#828282' onFocus={() => navigation.navigate('ScreenTimKiem')} style={{backgroundColor: '#EAEAEA', paddingVertical: 8, paddingHorizontal: 10,borderRadius: 5, margin: 16, fontSize: 12}} placeholder='Bạn muốn đi đâu'/>
                
                 <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
                     <Text style={{color: '#000000', fontWeight: 'bold'}}>Gợi ý điểm đến</Text>
@@ -85,7 +83,7 @@ const ScreenNhaHang =  ({navigation}) => {
                     <TouchableOpacity><Text style={{color: '#9E9E9E', fontSize: 12}}>Xem thêm  <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
                 </View>
                 <FlatList
-                    data = {Data_KS_RS}
+                    data = {Data_NhaHang}
                     keyExtractor={item => item.id}
                     renderItem={renderItemKS_RS}
                     horizontal

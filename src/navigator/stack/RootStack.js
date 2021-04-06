@@ -16,6 +16,8 @@ import ScreenKhachSan from '../../components/KhachSan';
 import ScreenNhaHang from '../../components/NhaHang';
 import ChiTietKM from '../../components/ChiTietKM';
 import ScreenCTDiaDiem from '../../components/CTDiaDiem';
+import ScreenCTNhaHang from '../../components/CTNhaHang';
+import ScreenChiTietKhachSan from '../../components/ChiTietKhachSan';
 export default function RootStack() {
   return (
     <NavigationContainer>
@@ -32,6 +34,8 @@ export default function RootStack() {
         <Stack.Screen name="ScreenNhaHang" component={ScreenNhaHang} />
         <Stack.Screen name="ChiTietKM" component={ChiTietKM} />
         <Stack.Screen name="ScreenCTDiaDiem" component={ScreenCTDiaDiem} />
+        <Stack.Screen name="ScreenCTNhaHangKhachSan" component={ScreenCTNhaHang} />
+        <Stack.Screen name="ScreenChiTietKhachSan" component={ScreenChiTietKhachSan} />
       </Stack.Navigator>
     </NavigationContainer>
   );

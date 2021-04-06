@@ -18,7 +18,7 @@ import DiaDiem from '../Data/DiaDiem';
 import DiaDiemTheoMua from '../Data/DiaDiemTheoMua';
 import KhuyenMai from '../Data/KhuyenMai';
 import KS_RS from '../Data/KS_RS';
-
+import NhaHang from '../Data/NhaHang';
 import LichTrinh from '../Data/LichTrinh';
 import TraiNghiem from '../Data/TraiNghiem';
 const Home =  ({navigation}) => {
@@ -38,11 +38,16 @@ const Home =  ({navigation}) => {
         setData_KS_RS(KS_RS);
         setData_KM(KhuyenMai);
         dispatch({type : 'DuLieuLichTrinh', data: LichTrinh})
+        dispatch({type : 'DuLieudiadiemphobien', data: DiaDiem})
         dispatch({type : 'DuLieuKS_RS', data: KS_RS})
+        dispatch({type : 'DuLieuNhaHang', data: NhaHang})
         dispatch({type :'DuLieutrainghiem', data : TraiNghiem})
     }, []);
     const renderItemKS_RS = ({ item }) => (
-        <View style={{height: 250, width: 160, marginRight: 16, justifyContent:'space-between'}}>
+        <TouchableOpacity  onPress={() =>{
+            dispatch({type : 'ChiTietKhachSan', data : item});
+            navigation.navigate('ScreenChiTietKhachSan');
+        }} style={{height: 250, width: 160, marginRight: 16, justifyContent:'space-between'}}>
         <View style={{flex: 3}}>
             <Image source={{uri : item.images[0]}}  style={{width: 160,height: 150, borderRadius: 5}}/>
         </View>
@@ -61,20 +66,26 @@ const Home =  ({navigation}) => {
             <Text style={{color: '#3076FE', fontSize: 10}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {item.DiaChi}</Text>
             <Text style={{fontWeight: '500', fontSize: 12, color: '#FF2424'}}>{item.Gia}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
     );
     const renderItemDiaDiem = ({ item }) => (
-        <View style={{width: 150, height: 200, marginRight: 16,  borderRadius: 5, overflow: 'hidden'}}>
+        <TouchableOpacity  onPress={() =>{
+            dispatch({type : 'ChiTietDiaDiem', data: item})
+            navigation.navigate('ScreenCTDiaDiem');
+        }} style={{width: 150, height: 200, marginRight: 16,  borderRadius: 5, overflow: 'hidden'}}>
                 <Image source={{uri : item.image}} style={{width: 150, height: 200}}/>
                 <LinearGradient colors={['rgba(77, 77, 77, 0)','#000000']} style={{position: 'absolute', bottom: 0, zIndex: 1, height: 20, width:'100%'}}>
                     <Text style={{ color:'white', fontSize: 13, fontWeight: '600', backgroundColor:'black',  textAlign:'center'}}>{item.TenDiaDiem}</Text>
                 </LinearGradient>
-        </View>
+        </TouchableOpacity>
       );
       const renderItemKhuyenMai= ({ item }) => (
-        <View style={{height: 150, width: 300, marginRight: 16}}>
+        <TouchableOpacity style={{height: 150, width: 300, marginRight: 16}} onPress={() =>{
+            dispatch({type : 'ChiTietKM', item : item});
+            navigation.navigate('ChiTietKM');
+        }}>
               <Image source={{uri : item.image}} resizeMode="stretch" style={{width: 300, height: 150,marginRight: 16, borderRadius: 5}}/>
-        </View>
+        </TouchableOpacity>
       );
       const renderItemTraiNghiem= ({ item }) => (
         <View style={{height: 280, width: 220, marginRight: 16}}>

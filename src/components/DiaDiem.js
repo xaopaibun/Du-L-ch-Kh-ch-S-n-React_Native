@@ -22,7 +22,10 @@ const ScreenDiaDiemPhoBien =  ({navigation}) => {
     const Data = useSelector(state => state.data_diadiemphobien);
 
     const renderItemDiaDiem = ({ item }) => (
-        <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}} onPress={() => navigation.navigate('ScreenCTDiaDiem')}>
+        <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}}  onPress={() =>{
+            dispatch({type : 'ChiTietDiaDiem', data: item})
+            navigation.navigate('ScreenCTDiaDiem');
+        }} >
             <ImageBackground source={{uri : item.image}} resizeMode="stretch" style={{ height: 180}} />
             <View style={{backgroundColor:'rgba(0, 0, 0, 0.25)', height: 180,width: '100%', position:'absolute', top : 0, left: 0, zIndex: 1}} />
             <View style={{height: 180,width: '100%', position:'absolute', top : 0, left: 0, zIndex: 2}}>

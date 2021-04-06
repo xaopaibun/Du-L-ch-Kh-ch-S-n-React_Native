@@ -19,6 +19,12 @@ const reducer = (state = initState, action) => {
             return { ...state, chitietKM: action.item}
         case 'ChiTietDiaDiem':
             return { ...state, chitietDiaDiem: action.data}
+        case 'DuLieuNhaHang':
+            return { ...state, data_NhaHang: action.data}
+        case 'ChiTietNhaHang':
+            return { ...state, chitietNhaHang: action.data}
+        case 'ChiTietKhachSan':
+            return { ...state, chitietKhachSan: action.data}
         
         default:
             return state

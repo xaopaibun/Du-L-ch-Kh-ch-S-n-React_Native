@@ -14,12 +14,16 @@ import {
 } from 'react-native';
 
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 const ScreenKS_RS =  ({navigation}) => {
+    const dispatch = useDispatch();
     const Data = useSelector(state => state.data_KS_RS);
    
     const renderItemKS_RS = ({ item }) => (
-        <View style={{flex: 1, height: 230,backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 16}}>
+        <TouchableOpacity  onPress={() =>{
+            dispatch({type : 'ChiTietKhachSan', data : item});
+            navigation.navigate('ScreenChiTietKhachSan');
+        }} style={{flex: 1, height: 230,backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 16}} >
             <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
                 <View style={{flex: 4}}><Image source={{uri : item.images[0]}}  style={{width: '100%', height: '100%'}}/></View>
                 <View style={{flex: 6, marginLeft: 6, justifyContent: 'space-between'}}>
@@ -48,14 +52,14 @@ const ScreenKS_RS =  ({navigation}) => {
             </View>
         </View>
         
-    </View>
+    </TouchableOpacity>
       );
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{flex:0.3}}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
-               <View style={{flex:0.7}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lịch Trình Gần Đây</Text></View>
+               <View style={{flex:0.7}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Khách Sạn && Resort</Text></View>
             </View>
             <FlatList
                 data = {Data}

@@ -5,7 +5,8 @@ let KS_RS = [
         "Loai" :"Khách Sạn",
         "Ten" :"The Herriott Hotel & Suite",
         "DiaChi" :"TP Hà Nội, Việt Nam",
-        "Gia" :"500,000đ / đêm"
+        "Gia" :"500,000đ / đêm",
+        "GioMoCua": "6h đến 22h"
     },
     {
         "id" :"2",
@@ -13,7 +14,8 @@ let KS_RS = [
         "Loai" :"Resort",
         "Ten" :"Naman Retreat",
         "DiaChi" :"TP Ninh Bình, Việt Nam",
-        "Gia" :"700,000đ / đêm"
+        "Gia" :"700,000đ / đêm",
+        "GioMoCua": "6h đến 22h"
     },
     {
         "id" :"3",
@@ -21,7 +23,8 @@ let KS_RS = [
         "Loai" :"Khách Sạn",
         "Ten" :"Hang Múa Ecolodge",
         "DiaChi" :"Hang Múa, Ninh Bình",
-        "Gia" :"940,000đ / đêm"
+        "Gia" :"940,000đ / đêm",
+        "GioMoCua": "6h đến 22h"
     }
 ];
 export default KS_RS;
