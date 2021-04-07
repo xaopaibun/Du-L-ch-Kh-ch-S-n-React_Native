@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
@@ -20,7 +20,7 @@ import { useSelector } from 'react-redux';
 const ScreenDiaDiemPhoBien =  ({navigation}) => {
     
     const Data = useSelector(state => state.data_diadiemphobien);
-
+    const dispatch = useDispatch();
     const renderItemDiaDiem = ({ item }) => (
         <TouchableOpacity style={{overflow:'hidden',borderRadius: 5, marginBottom: 16, position:'relative'}}  onPress={() =>{
             dispatch({type : 'ChiTietDiaDiem', data: item})
