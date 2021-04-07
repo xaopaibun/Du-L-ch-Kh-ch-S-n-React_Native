@@ -43,7 +43,7 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Khuyến Mại</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('ScreenYeuThich')} style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/yeuthich.png')}  style={{width: 18, height: 16}}/>
                         </View>
@@ -59,7 +59,7 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Đánh Giá</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('ScreenCaiDat')} style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/caidat.png')}  style={{width: 19, height: 19}}/>
                         </View>

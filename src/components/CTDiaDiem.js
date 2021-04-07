@@ -106,7 +106,7 @@ const ScreenCTDiaDiem =  ({navigation}) => {
                     <Text style={{color: '#000000', fontSize: 16, fontWeight:'600'}}>{dulieu.TenDiaDiem}</Text>
                     <Text style={{color: '#3076FE', fontSize: 10, marginVertical: 6}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {dulieu.TenDiaDiem}, Việt Nam</Text>
                     <Text style={{ fontSize: 12, fontWeight:'400', lineHeight: 16}} numberOfLines={3}>{dulieu.ND}</Text>
-                    <TouchableOpacity style={{justifyContent: 'center', alignItems: 'center'}}>
+                    <TouchableOpacity style={{justifyContent: 'center', alignItems: 'center'}} onPress={() => console.log('jiji')}>
                         <Text style={{color: '#FF5F24', paddingVertical: 6, fontSize: 12, alignItems: 'center'}}>Xem thêm</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{backgroundColor: '#FF5F24',borderRadius: 6 , justifyContent: 'center', alignItems: 'center'}}>

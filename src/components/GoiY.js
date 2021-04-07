@@ -15,7 +15,7 @@ import {
 
 
 import { useSelector } from 'react-redux';
-const ScreenLichTrinh =  ({navigation}) => {
+const ScreenGoiY=  ({navigation}) => {
     const Data_LichTrinh = useSelector(state => state.data_diadiem);
 
     const renderItemLichTrinh = ({ item }) => (
@@ -67,7 +67,7 @@ const ScreenLichTrinh =  ({navigation}) => {
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 7, height: 12}}/></TouchableOpacity>
-                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lich Trình</Text></View>
+                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Gợi ý</Text></View>
                 <View></View>
             </View>
             <FlatList
@@ -79,4 +79,4 @@ const ScreenLichTrinh =  ({navigation}) => {
         </SafeAreaView>
     );
 }
-export default ScreenLichTrinh;
+export default ScreenGoiY;

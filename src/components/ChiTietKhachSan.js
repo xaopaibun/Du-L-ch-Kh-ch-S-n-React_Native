@@ -86,7 +86,7 @@ const ScreenChiTietKhachSan=  ({navigation}) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <TouchableOpacity style={{marginVertical: 10,backgroundColor: '#FF5F24',borderRadius: 6 , justifyContent: 'center', alignItems: 'center'}}>
+                <TouchableOpacity onPress={()=> navigation.navigate('ScreenDanhSachPhong')} style={{marginVertical: 10,backgroundColor: '#FF5F24',borderRadius: 6 , justifyContent: 'center', alignItems: 'center'}}>
                         <Text style={{color: 'white', paddingVertical: 6}}>Chọn Phòng</Text>
                     </TouchableOpacity>
                 <Text style={{marginTop: 15,lineHeight: 16, fontSize: 12}}>

@@ -15,7 +15,7 @@ import {
 
 
 import { useSelector } from 'react-redux';
-const ScreenLichTrinh =  ({navigation}) => {
+const ScreenYeuThich =  ({navigation}) => {
     const Data_LichTrinh = useSelector(state => state.data_diadiem);
 
     const renderItemLichTrinh = ({ item }) => (
@@ -57,7 +57,7 @@ const ScreenLichTrinh =  ({navigation}) => {
             </View>
             <View style={{ flex: 0.6, flexDirection:'row', justifyContent:'flex-end', marginTop: 8}}>
                 <Image source={require('../assets/images/chiase.png')}  style={{width: 13.2, marginRight: 14}}/>
-                <Image source={require('../assets/images/tim.png')}  style={{width: 14}}/>
+                <Image source={require('../assets/images/tim2.png')}  style={{width: 14}}/>
             </View>
         </View>
     </View>
@@ -67,7 +67,7 @@ const ScreenLichTrinh =  ({navigation}) => {
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 7, height: 12}}/></TouchableOpacity>
-                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lich Trình</Text></View>
+                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Yêu Thích</Text></View>
                 <View></View>
             </View>
             <FlatList
@@ -79,4 +79,4 @@ const ScreenLichTrinh =  ({navigation}) => {
         </SafeAreaView>
     );
 }
-export default ScreenLichTrinh;
+export default ScreenYeuThich;

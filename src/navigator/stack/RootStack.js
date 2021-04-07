@@ -21,11 +21,19 @@ import ScreenChiTietKhachSan from '../../components/ChiTietKhachSan';
 import ScreenTaoLichTrinh from '../../components/TaoLichTrinh';
 import ScreenNguoiThamGia from '../../components/NguoiThamGia';
 import ScreenXemGoiY from '../../components/Xemgoiy';
+import ScreenDanhSachPhong from '../../components/DanhSachPhong';
+import ScreenDatPhong from '../../components/DatPhong';
+import ScreenYeuThich from '../../components/YeuThich';
+import ScreenCaiDat from '../../components/CaiDat';
+import ScreenChinhSachBaoMat from '../../components/ChinhSachBaoMat';
+import ScreenDieuKhoan from '../../components/DieuKhoan';
+import ScreenLogin from '../../components/Login';
 export default function RootStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName={Home}>
         <Stack.Screen name="Home" component={Tabview} />
+        <Stack.Screen name="ScreenLogin" component={ScreenLogin} />
         <Stack.Screen name="ScreenLichTrinh" component={ScreenLichTrinh} />
         <Stack.Screen name="ScreenKhuyenMai" component={ScreenKhuyenMai} />
         <Stack.Screen name="ScreenDiaDiemPhoBien" component={ScreenDiaDiemPhoBien} />
@@ -41,7 +49,13 @@ export default function RootStack() {
         <Stack.Screen name="ScreenChiTietKhachSan" component={ScreenChiTietKhachSan} />
         <Stack.Screen name="ScreenTaoLichTrinh" component={ScreenTaoLichTrinh} />
         <Stack.Screen name="ScreenNguoiThamGia" component={ScreenNguoiThamGia} />
+        <Stack.Screen name="ScreenDanhSachPhong" component={ScreenDanhSachPhong} />
         <Stack.Screen name="ScreenXemGoiY" component={ScreenXemGoiY} />
+        <Stack.Screen name="ScreenDatPhong" component={ScreenDatPhong} />
+        <Stack.Screen name="ScreenYeuThich" component={ScreenYeuThich} />
+        <Stack.Screen name="ScreenCaiDat" component={ScreenCaiDat} />
+        <Stack.Screen name="ScreenDieuKhoan" component={ScreenDieuKhoan} />
+        <Stack.Screen name="ScreenChinhSachBaoMat" component={ScreenChinhSachBaoMat} />
       </Stack.Navigator>
     </NavigationContainer>
   );
