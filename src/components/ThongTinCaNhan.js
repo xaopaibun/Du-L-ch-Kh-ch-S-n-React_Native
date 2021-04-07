@@ -27,46 +27,46 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                     <Text style={{marginLeft: 10, fontSize: 15, fontWeight: '500'}}>Phạm Jin</Text>
                 </View>
                 <View style={{marginTop: 35,height: 'auto', backgroundColor: '#ffffff', padding: 16}}>
-                    <View style={{height: 30, flexDirection: 'row'}}>
+                    <TouchableOpacity style={{height: 30, flexDirection: 'row'}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/lichtrinh.png')}  style={{width: 15, height: 20}}/>
                         </View>
                         <View style={{flex: 9,borderBottomWidth: 0.2, borderBottomColor : '#B9B9B9', borderStyle:'solid'}}>
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Lịch Trình Của Tôi</Text>
                         </View>
-                    </View>
-                    <View style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/megaphone1.png')}  style={{width: 15, height: 20}}/>
                         </View>
                         <View style={{flex: 9,borderBottomWidth: 0.2, borderBottomColor : '#B9B9B9', borderStyle:'solid'}}>
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Khuyến Mại</Text>
                         </View>
-                    </View>
-                    <View style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/yeuthich.png')}  style={{width: 18, height: 16}}/>
                         </View>
                         <View style={{flex: 9,borderBottomWidth: 0.2, borderBottomColor : '#B9B9B9', borderStyle:'solid'}}>
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Yêu Thích</Text>
                         </View>
-                    </View>
-                    <View style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/danhgia.png')}  style={{width: 20, height: 20}}/>
                         </View>
                         <View style={{flex: 9,borderBottomWidth: 0.2, borderBottomColor : '#B9B9B9', borderStyle:'solid'}}>
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Đánh Giá</Text>
                         </View>
-                    </View>
-                    <View style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/caidat.png')}  style={{width: 19, height: 19}}/>
                         </View>
                         <View style={{flex: 9,borderBottomWidth: 0.2, borderBottomColor : '#B9B9B9', borderStyle:'solid'}}>
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Cài Đặt</Text>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
            

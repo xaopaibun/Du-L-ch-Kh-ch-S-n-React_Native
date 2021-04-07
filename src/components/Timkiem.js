@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,Image,TextInput,ImageBackground,View,TouchableOpacity,FlatList,} from 'react-native';
 import { onChange, set } from 'react-native-reanimated';
+import { useDispatch , useSelector} from 'react-redux';
 const data_KQ = [
     {
         "iD" :"1",
@@ -59,6 +60,7 @@ const data_KQ = [
         "Content":"Kỳ quan thế giới"
     }
 ];
+
 const ScreenTimKiem =  ({navigation}, props) => {
     //const [key, setkey] = React.useState('');
     // const onChange = (key) =>{
@@ -68,6 +70,7 @@ const ScreenTimKiem =  ({navigation}, props) => {
     //     console.log(M);
         
     // }
+    const dispatch = useDispatch();
     const [KQ, setKQ] = React.useState([]);
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
@@ -81,21 +84,24 @@ const ScreenTimKiem =  ({navigation}, props) => {
                 </View>
                 <View style={{backgroundColor: '#F7F7F7',flex: 9}}>
                     
-                        {/* <FlatList 
+                        <FlatList 
                             data = {data_KQ}
                             keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(
-                                    <View style={{marginLeft: 16, flexDirection:'row', alignItems:'center', paddingVertical: 10}}>
+                                    <TouchableOpacity style={{marginLeft: 16, flexDirection:'row', alignItems:'center', paddingVertical: 10}} onPress={() =>{
+                                            dispatch({type : 'ThanhPhoXuatPhat', ThanhPho : item.Ten});
+                                            navigation.navigate('ScreenTaoLichTrinh');
+                                    }}>
                                         <View style={{flex: 0.09, alignItems:'center'}}><Image source={require('../assets/images/dinhvi.png')}  style={{width: 18, height: 18}}/></View>
                                         <View style={{flex: 0.9}}>
                                             <Text style={{fontWeight: '500', fontSize: 13, paddingBottom: 5}}>{item.Ten}</Text>
                                             <Text style={{color:'#9A9A9A', fontSize: 10}}>{item.Content}</Text>
                                         </View>
-                                    </View>
+                                    </TouchableOpacity>
                                 );
                             }}
-                        /> */}
+                        />
                         
                     
                 </View>

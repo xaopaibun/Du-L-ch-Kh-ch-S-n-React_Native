@@ -5,7 +5,7 @@ import React, { useRef }from "react";
 import { View, StyleSheet, TouchableHighlight,TouchableOpacity, Animated,  Image,Text } from "react-native";
 
 import { useDispatch} from 'react-redux';
-const AddButton  = () => {
+const AddButton  = ({navigation}) => {
     // mode = new Animated.Value(0);
     // buttonSize = new Animated.Value(1);
     const mode  = useRef(new Animated.Value(0)).current;
@@ -13,32 +13,34 @@ const AddButton  = () => {
     const buttonSize  = useRef(new Animated.Value(1)).current;
     const dispatch = useDispatch();
     handlePress = () => {
-        setactive(!active);
-        setTimeout(() =>{
-            dispatch({type : 'ACTIVE_TABVIEW', nutButton : active})
-        }, 1200)
+       
         Animated.sequence([
             Animated.timing(buttonSize, {
                 toValue: 0.95,
                 duration: 200,
-                useNativeDriver: true 
+                useNativeDriver: true
             }),
             Animated.timing(buttonSize, {
                 toValue: 1,
-                useNativeDriver: true 
+                useNativeDriver: true,
+        
             }),
             Animated.timing(mode, {
                 toValue: mode._value === 0 ? 1 : 0,
-                useNativeDriver: false
-                
+                useNativeDriver: false,
+
             })
         ]).start();
+      setTimeout(() =>{
+        setactive(!active)
+        dispatch({type : 'ACTIVE_TABVIEW', nutButton : active})
+        }, 1200)
     };
 
    
         const thermometerX = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-24, -100]
+            outputRange: [-40, -120]
         });
 
         const thermometerY = mode.interpolate({
@@ -48,25 +50,25 @@ const AddButton  = () => {
 
         const timeX = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-24, 0]
+            outputRange: [-30, 5]
         });
 
         const timeY = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-50, -150]
+            outputRange: [-50, -160]
         });
         const timeY1 = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-50, -150]
+            outputRange: [-50, -160]
         });
 
         const pulseX = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-24, 50]
+            outputRange: [-30, 50]
         });
         const timeX1 = mode.interpolate({
             inputRange: [0, 1],
-            outputRange: [-24, -60]
+            outputRange: [-30, -70]
         });
         const pulseY = mode.interpolate({
             inputRange: [0, 1],
@@ -85,7 +87,7 @@ const AddButton  = () => {
         return (
             <View style={{ position: "absolute", alignItems: "center" }}>
                 <Animated.View style={{ position: "absolute", left: thermometerX, top: thermometerY }}>
-                    <TouchableOpacity style={{width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
+                    <TouchableOpacity style={{width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center'}} >
                         <View style={styles.secondaryButton}>
                         <Text style={{color: 'white', fontSize: 16, fontWeight: '500'}}>+</Text>
                         </View>
@@ -120,12 +122,23 @@ const AddButton  = () => {
                     </TouchableOpacity>
                 </Animated.View>
                 
-                <Animated.View style={[styles.button, sizeStyle]}>
-                    <TouchableHighlight onPress={handlePress} underlayColor="#FF5F24">
+                <Animated.View style={[{alignItems: "center",
+        justifyContent: "center",
+        width: 39,
+        height: 39,
+        borderRadius: 36,
+        backgroundColor: active?"#FF5F24":"#FFAE8F",
+        position: "absolute",
+        marginTop: -35,
+        shadowColor: "#FF5F24",
+        shadowRadius: 5,
+        shadowOffset: { height: 10 },
+        shadowOpacity: 0.3,}, sizeStyle]}>
+                    <TouchableOpacity onPress={handlePress}>
                         <Animated.View style={{ transform: [{ rotate: rotation }] }}>
                         <Text style={{color: 'white', fontSize: 30, textAlign:'center', fontWeight: '600'}}>+</Text>
                         </Animated.View>
-                    </TouchableHighlight>
+                    </TouchableOpacity>
                 </Animated.View>
             </View>
         );
@@ -138,6 +151,7 @@ const styles = StyleSheet.create({
         width: 39,
         height: 39,
         borderRadius: 36,
+        
         backgroundColor: "#FF5F24",
         position: "absolute",
         marginTop: -35,
