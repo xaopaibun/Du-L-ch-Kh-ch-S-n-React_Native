@@ -12,7 +12,6 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch , useSelector} from 'react-redux';
 
 const ChiTietKM = ({navigation}) =>{

@@ -22,10 +22,10 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                 <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Thông Tin Cá Nhân</Text>
             </View>
             <View style={{flex: 1, backgroundColor: '#E5E5E5'}}>
-                <View style={{marginTop: 20,height: 80, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', backgroundColor: 'white'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('SuaThongTinCaNhan')} style={{marginTop: 20,height: 80, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', backgroundColor: 'white'}}>
                     <Image source={{uri :'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=WEV97IplNlgAX8XPpG-&_nc_ht=scontent.fhan3-1.fna&oh=f22b691c0fe1895e745ae77dc67c89a6&oe=608A53D7'}}  style={{width: 60, height: 60, borderRadius: 50}} />
                     <Text style={{marginLeft: 10, fontSize: 15, fontWeight: '500'}}>Phạm Jin</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{marginTop: 35,height: 'auto', backgroundColor: '#ffffff', padding: 16}}>
                     <TouchableOpacity style={{height: 30, flexDirection: 'row'}}>
                         <View style={{flex: 1}}>

@@ -28,12 +28,15 @@ import ScreenCaiDat from '../../components/CaiDat';
 import ScreenChinhSachBaoMat from '../../components/ChinhSachBaoMat';
 import ScreenDieuKhoan from '../../components/DieuKhoan';
 import ScreenLogin from '../../components/Login';
+import ScreenOTP from '../../components/OTP';
+import ScreenCapNhatThongTin from '../../components/CapNhatThongTin';
+import SuaThongTinCaNhan from '../../components/Suathongtincanhan';
 export default function RootStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName={Home}>
-        <Stack.Screen name="Home" component={Tabview} />
+      <Stack.Navigator headerMode="none" >
         <Stack.Screen name="ScreenLogin" component={ScreenLogin} />
+        <Stack.Screen name="Home" component={Tabview} />
         <Stack.Screen name="ScreenLichTrinh" component={ScreenLichTrinh} />
         <Stack.Screen name="ScreenKhuyenMai" component={ScreenKhuyenMai} />
         <Stack.Screen name="ScreenDiaDiemPhoBien" component={ScreenDiaDiemPhoBien} />
@@ -56,6 +59,9 @@ export default function RootStack() {
         <Stack.Screen name="ScreenCaiDat" component={ScreenCaiDat} />
         <Stack.Screen name="ScreenDieuKhoan" component={ScreenDieuKhoan} />
         <Stack.Screen name="ScreenChinhSachBaoMat" component={ScreenChinhSachBaoMat} />
+        <Stack.Screen name="ScreenOTP" component={ScreenOTP} />
+        <Stack.Screen name="ScreenCapNhatThongTin" component={ScreenCapNhatThongTin} />
+        <Stack.Screen name="SuaThongTinCaNhan" component={SuaThongTinCaNhan} />
       </Stack.Navigator>
     </NavigationContainer>
   );
