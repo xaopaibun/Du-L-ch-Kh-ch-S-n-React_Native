@@ -35,6 +35,7 @@ const ScreenOTP = ({navigation}) =>{
     }
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#E5E5E5'}}>
+            <View style={{flex: 1}}></View>
             <View style={{flex: 2,  paddingHorizontal: 44, justifyContent: 'space-around'}}>
             {/* <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/muiten.png')}  style={{width: 24, height: 24}}/></TouchableOpacity> */}
                 <Text style={{textAlign:'center'}}>Vui lòng nhập mã OTP vừa được gửi vào số điện thoại của bạn</Text>
@@ -150,7 +151,7 @@ const ScreenOTP = ({navigation}) =>{
                 <Text style={{color: '#F26230', textAlign: 'center', fontSize: 10, fontWeight: '400'}}>Gửi lại (60s)</Text>
             </View>
             
-            <View style={{flex: 3, paddingHorizontal: 16}}>
+            <View style={{flex: 2, paddingHorizontal: 16}}>
                 {
                     (MaPin1 !== '' && MaPin2 !== '' && MaPin3 !=='' && MaPin4 !== '') ?
                     <TouchableOpacity onPress={() => navigation.navigate('ScreenCapNhatThongTin')} style={{height: 50,width: '100%', backgroundColor: '#FF5F24', borderRadius: 30, justifyContent: 'center', alignItems: 'center'}}>  

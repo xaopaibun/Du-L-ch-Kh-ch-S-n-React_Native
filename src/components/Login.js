@@ -14,7 +14,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient'
 const ScreenLogin =  ({navigation}) => {
     return(
-        <View style={{flex: 1, position: 'relative'}}>
+        <View style={{width: '100%', height: '100%', position: 'relative'}}>
            
             <StatusBar barStyle='dark-content'/>
             <LinearGradient colors={['#FFFFFF', 'rgba(255, 216, 181, 0.708333)', 'rgba(255, 120, 0, 0)']} style={{width: '100%', height: '100%', position: 'absolute', left: 0, right: 0, zIndex: 1}}>
