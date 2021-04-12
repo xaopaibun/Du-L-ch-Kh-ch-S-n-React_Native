@@ -5,7 +5,7 @@ const SuaThongTinCaNhan = ({navigation}) =>{
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Text style={{color:'#828282', fontSize: 12}}>Huỷ</Text></TouchableOpacity>
                 <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Sửa thông tin cá nhân</Text></View>
                 <TouchableOpacity onPress={() =>Alert.alert('Thông báo', 'Bạn đã lưu thành công')}><Text style={{color:'#828282', fontSize: 12}}>Lưu</Text></TouchableOpacity>

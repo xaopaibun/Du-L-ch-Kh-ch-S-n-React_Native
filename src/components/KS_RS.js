@@ -57,7 +57,7 @@ const ScreenKS_RS =  ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around',alignItems: 'center', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{flex:0.3}}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
                <View style={{flex:0.7}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Khách Sạn && Resort</Text></View>
             </View>

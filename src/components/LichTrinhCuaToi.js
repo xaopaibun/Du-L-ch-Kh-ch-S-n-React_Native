@@ -62,8 +62,8 @@ const ScreenLT =  ({navigation}) => {
                 </View>
             </View>
             <View style={{ flex: 0.6, flexDirection:'row', justifyContent:'flex-end', marginTop: 8}}>
-                <Image source={require('../assets/images/chiase.png')}  style={{width: 13, marginRight: 14}}/>
-                <Image source={require('../assets/images/tim.png')}  style={{width: 13, marginRight: 14}}/>
+                <TouchableOpacity><Image source={require('../assets/images/chiase.png')}  style={{width: 13, marginRight: 14}}/></TouchableOpacity>
+                <TouchableOpacity><Image source={require('../assets/images/tim.png')}  style={{width: 14,height: 12 }}/></TouchableOpacity>
             </View>
         </View>
     </View>

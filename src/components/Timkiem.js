@@ -86,7 +86,7 @@ const ScreenTimKiem =  ({navigation}, props) => {
                     
                         <FlatList 
                             data = {data_KQ}
-                            keyExtractor={item => item.iD}
+                            keyE xtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(
                                     <TouchableOpacity style={{marginLeft: 16, flexDirection:'row', alignItems:'center', paddingVertical: 10}} onPress={() =>{

@@ -62,7 +62,7 @@ const ScreenKhachSan =  ({navigation}) => {
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
            
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height:40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
                <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Khách Sạn</Text>
                <TouchableOpacity><Image source={require('../assets/images/timkiem.png')}  style={{width: 12}}/></TouchableOpacity>

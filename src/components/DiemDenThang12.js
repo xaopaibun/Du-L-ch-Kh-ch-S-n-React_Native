@@ -41,7 +41,7 @@ const ScreenDiemDenThang12 =  ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', marginVertical: 10, backgroundColor: '#ffffff', alignItems:'center'}}>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', marginVertical: 10, backgroundColor: '#ffffff', alignItems:'center'}}>
                 <View style={{flex:0.1, justifyContent:'center', alignItems:'center'}}><TouchableOpacity onPress={() => navigation.goBack()}><Image source={require('../assets/images/back.png')}  style={{width: 7, marginRight: 12}}/></TouchableOpacity></View>
                <View style={{flex:0.8, alignItems:'center'}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Điểm đến tháng 12</Text></View>
             </View>

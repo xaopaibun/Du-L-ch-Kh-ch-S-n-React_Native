@@ -10,7 +10,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function Tabheader() {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
-        <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
+        <View style={{height: 55, justifyContent:'center',alignItems: 'center', backgroundColor: '#ffffff'}}>
               
                <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lịch Trình của tôi</Text>
         </View>

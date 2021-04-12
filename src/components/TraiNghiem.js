@@ -33,7 +33,7 @@ const ScreenTraiNghiem=  ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-around', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{flex:0.3}}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
                <View style={{flex:0.6}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Trải Nghiệm Nổi Bật</Text></View>
                <View ></View>
@@ -48,3 +48,13 @@ const ScreenTraiNghiem=  ({navigation}) => {
     );
 }
 export default ScreenTraiNghiem;
+
+
+
+
+// public static void main(String[] args) {
+//     Sever T1 = new Thread1();
+//     T1.start();
+//     Thread2 T2 = new Thread2();
+//    T2.start();
+// }

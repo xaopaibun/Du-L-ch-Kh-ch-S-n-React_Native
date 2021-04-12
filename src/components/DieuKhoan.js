@@ -15,7 +15,7 @@ const ScreenDieuKhoan =  ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 7, height: 12}}/></TouchableOpacity>
                 <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Điều Khoản Sử Dụng</Text></View>
                 <View></View>

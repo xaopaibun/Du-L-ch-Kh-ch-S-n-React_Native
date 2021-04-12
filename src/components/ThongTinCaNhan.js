@@ -18,7 +18,7 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 40,  alignItems:'center', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40,  alignItems:'center', marginVertical: 10, backgroundColor: '#ffffff', justifyContent: 'center'}}>
                 <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Thông Tin Cá Nhân</Text>
             </View>
             <View style={{flex: 1, backgroundColor: '#E5E5E5'}}>
@@ -75,3 +75,23 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
     );
 }
 export default ScreenThongTinCaNhan;
+
+while(true){
+}
+
+MyTask myTask = new MyTask();
+    Timer timer = new Timer();
+    System.out.println("Currnet time: " + new Date());
+    timer.schedule(myTask, 5000);
+
+    public static void main(String[] args) {
+        Task1 T1 = new Task1 ();
+        Timer timer = new Timer();
+       
+        timer.schedule(T1, 1);
+  
+      }
+
+
+      char c; 
+      

@@ -3,8 +3,8 @@ import { SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,Image,TextInput,Image
 const DanhGia = ({navigation}) =>{
     const [defaultRating, setdefaultRating] = React.useState(1);
         const [maxRating, setmaxRating] = React.useState([1,2,3,4,5]);
-        const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true';
-        const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true';
+        const starImgFilled = require('../assets/images/star_filled.png');
+        const starImgCorner = require('../assets/images/star_corner.png');
     const CustomRatingBar = () =>{
                 return (
                     <View style={styles.customRatingBar}>
@@ -14,8 +14,7 @@ const DanhGia = ({navigation}) =>{
                                     <TouchableOpacity onPress={() =>setdefaultRating(item)} activeOpacity={0.7} key = {item}>
                                             <Image 
                                                 style={styles.starImg}
-                                                source = { item <= defaultRating ? {
-                                                    uri : starImgFilled} : {uri :starImgCorner }}
+                                                source = { item <= defaultRating ? starImgFilled : starImgCorner }
                                             />
                                     </TouchableOpacity>
                                 );
@@ -27,7 +26,7 @@ const DanhGia = ({navigation}) =>{
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Text style={{color:'#828282', fontSize: 12}}>Huỷ</Text></TouchableOpacity>
                 <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Đánh giá lịch trình</Text></View>
                 <TouchableOpacity ><Text style={{color:'#828282', fontSize: 12}}>Gửi</Text></TouchableOpacity>

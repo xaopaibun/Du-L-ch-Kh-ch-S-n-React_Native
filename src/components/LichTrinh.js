@@ -19,7 +19,7 @@ const ScreenLichTrinh =  ({navigation}) => {
     const Data_LichTrinh = useSelector(state => state.data_diadiem);
 
     const renderItemLichTrinh = ({ item }) => (
-        <View style={{height: 300,  backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 20}}>
+        <TouchableOpacity onPress={() => navigation.navigate('ScreenTongQuanLichTrinh')} style={{height: 300,  backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 20}}>
         <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
             <View style={{flex: 4}}><Image source={{uri : item.images[0]}}  style={{width: '100%', height: '100%'}}/></View>
             <View style={{flex: 6, marginLeft: 6, justifyContent: 'space-between'}}>
@@ -60,14 +60,14 @@ const ScreenLichTrinh =  ({navigation}) => {
                 <Image source={require('../assets/images/tim.png')}  style={{width: 14}}/>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
       );
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 25, flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+            <View style={{height: 40, alignItems: 'center',flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
                 <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 7, height: 12}}/></TouchableOpacity>
-                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lich Trình</Text></View>
+                <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Lịch Trình Gần Đây</Text></View>
                 <View></View>
             </View>
             <FlatList

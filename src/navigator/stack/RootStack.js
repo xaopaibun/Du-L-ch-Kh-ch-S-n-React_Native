@@ -31,6 +31,7 @@ import ScreenLogin from '../../components/Login';
 import ScreenOTP from '../../components/OTP';
 import ScreenCapNhatThongTin from '../../components/CapNhatThongTin';
 import SuaThongTinCaNhan from '../../components/Suathongtincanhan';
+import ScreenTongQuanLichTrinh from '../../components/TongQuanLichTrinh';
 export default function RootStack() {
   return (
     <NavigationContainer>
@@ -62,6 +63,7 @@ export default function RootStack() {
         <Stack.Screen name="ScreenOTP" component={ScreenOTP} />
         <Stack.Screen name="ScreenCapNhatThongTin" component={ScreenCapNhatThongTin} />
         <Stack.Screen name="SuaThongTinCaNhan" component={SuaThongTinCaNhan} />
+        <Stack.Screen name="ScreenTongQuanLichTrinh" component={ScreenTongQuanLichTrinh} />
       </Stack.Navigator>
     </NavigationContainer>
   );
