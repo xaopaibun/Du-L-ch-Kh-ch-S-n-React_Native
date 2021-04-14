@@ -32,7 +32,10 @@ import ScreenOTP from '../../components/OTP';
 import ScreenCapNhatThongTin from '../../components/CapNhatThongTin';
 import SuaThongTinCaNhan from '../../components/Suathongtincanhan';
 import ScreenTongQuanLichTrinh from '../../components/TongQuanLichTrinh';
-export default function RootStack() {
+import Profile from '../../components/Profile';
+import NguoiTheoDoi from '../../components/NguoiTheoDoi';
+import NguoiDangTheoDoi from '../../components/NguoiDangTheoDoi';
+export default function RootStack({navigation}) {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" >
@@ -64,6 +67,9 @@ export default function RootStack() {
         <Stack.Screen name="ScreenCapNhatThongTin" component={ScreenCapNhatThongTin} />
         <Stack.Screen name="SuaThongTinCaNhan" component={SuaThongTinCaNhan} />
         <Stack.Screen name="ScreenTongQuanLichTrinh" component={ScreenTongQuanLichTrinh} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="NguoiTheoDoi" component={NguoiTheoDoi} />
+        <Stack.Screen name="NguoiDangTheoDoi" component={NguoiDangTheoDoi} />
       </Stack.Navigator>
     </NavigationContainer>
   );

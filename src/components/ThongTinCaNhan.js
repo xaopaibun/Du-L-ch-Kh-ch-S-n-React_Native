@@ -4,19 +4,23 @@ import {
   StatusBar,
   Text,
  Image,
- 
+
   View,
   TouchableOpacity,
 
 } from 'react-native';
+import RateApp from './RateApp';
 
-
+import { Modal, Portal, Button, Provider } from 'react-native-paper';
 const ScreenThongTinCaNhan =  ({navigation}) => {
   
-   
-   
+    // const [modalVisible, setModalVisible] = React.useState(false);
+    const [visible, setVisible] = React.useState(false);
+
+    const showModal = () => setVisible(true);
+    const hideModal = () => setVisible(false);
     return(
-        <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>         
             <StatusBar barStyle='dark-content'/>
             <View style={{height: 40,  alignItems:'center', marginVertical: 10, backgroundColor: '#ffffff', justifyContent: 'center'}}>
                 <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Thông Tin Cá Nhân</Text>
@@ -51,7 +55,7 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Yêu Thích</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
+                    <TouchableOpacity  onPress={showModal} style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/danhgia.png')}  style={{width: 20, height: 20}}/>
                         </View>
@@ -59,6 +63,7 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                             <Text style={{ fontSize: 13, fontWeight : '500'}}>Đánh Giá</Text>
                         </View>
                     </TouchableOpacity>
+
                     <TouchableOpacity onPress={() =>navigation.navigate('ScreenCaiDat')} style={{height: 30, flexDirection: 'row', marginVertical: 8}}>
                         <View style={{flex: 1}}>
                             <Image source={require('../assets/images/caidat.png')}  style={{width: 19, height: 19}}/>
@@ -69,7 +74,9 @@ const ScreenThongTinCaNhan =  ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             </View>
-           
+            <Modal visible={visible} onDismiss={hideModal} >
+                <RateApp/>
+            </Modal>
            
         </SafeAreaView>
     );

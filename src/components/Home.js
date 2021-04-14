@@ -141,6 +141,7 @@ const Home =  ({navigation}) => {
   return (
     <View style={{flex: 1, backgroundColor: '#E5E5E5', position: 'relative'}}>
         <StatusBar barStyle='light-content'/>
+        <ScrollView>
         {
             nutButton ?  <View style={{backgroundColor: 'rgba(0, 0, 0, 0.7)', width: '100%', height: '100%',position:'absolute', top : 0, left: 0, zIndex: 9999999999}}></View> : <View></View>
         }
@@ -150,7 +151,7 @@ const Home =  ({navigation}) => {
                 <ActivityIndicator size="large" color="#FF5F24" />
             </View>
             :
-       <ScrollView>
+       <View>
            
         <View style={styles.Header_Home}>
                 <ImageBackground source={require('../assets/images/Home.png')} style={{width: '100%', height: '100%', position:'relative'}} > 
@@ -286,11 +287,12 @@ const Home =  ({navigation}) => {
             horizontal
             style={{marginLeft: 16}}
         />
-        
-    </ScrollView>
+       </View> 
+   
      } 
     
     <Image source={require('../assets/images/Frame7.png')}  style={{width: 89, height: 89, position: 'absolute', bottom: 10, right: 10, zIndex: 9}} />
+    </ScrollView>
     </View>
   );
 };

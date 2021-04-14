@@ -39,7 +39,7 @@ const DanhGia = ({navigation}) =>{
                     <TextInput placeholder ='Tiêu đề' placeholderTextColor ='#9A9A9A'/>
                 </View>
                 <View style={{flex: 3, paddingTop: 16 }}>
-                    <TextInput placeholder ='Nhận xét' placeholderTextColor ='#9A9A9A' numberOfLines={5}/>
+                    <TextInput  placeholder ='Nhận xét' placeholderTextColor ='#9A9A9A' numberOfLines={5}/>
                 </View>
             </View>
             <View style={{backgroundColor: '#E5E5E5', flex: 1, padding: 16}}>

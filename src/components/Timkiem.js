@@ -62,14 +62,14 @@ const data_KQ = [
 ];
 
 const ScreenTimKiem =  ({navigation}, props) => {
-    //const [key, setkey] = React.useState('');
-    // const onChange = (key) =>{
-    //     setkey(key);
-    //    let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
+    const [key, setkey] = React.useState('');
+    const onChange = (key) =>{
+        setkey(key);
+       let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
         
-    //     console.log(M);
+        console.log(M);
         
-    // }
+    }
     const dispatch = useDispatch();
     const [KQ, setKQ] = React.useState([]);
     return(
@@ -86,7 +86,7 @@ const ScreenTimKiem =  ({navigation}, props) => {
                     
                         <FlatList 
                             data = {data_KQ}
-                            keyE xtractor={item => item.iD}
+                            keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(
                                     <TouchableOpacity style={{marginLeft: 16, flexDirection:'row', alignItems:'center', paddingVertical: 10}} onPress={() =>{
