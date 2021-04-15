@@ -11,7 +11,7 @@ import {
   FlatList
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { set } from 'react-native-reanimated';
+
 import { useDispatch , useSelector} from 'react-redux';
 const Loai = ['Lịch trình', 'Máy bay', 'Khách sạn', 'Tham quan'];
 const ScreenTongQuanLichTrinh =  ({navigation}) => {
@@ -96,7 +96,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
                 Loai.map((val, index) =>{
                   const [active, setactive] = React.useState(false);
                     return(
-                      <TouchableOpacity  onPress={() => setactive(!active)} style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: active?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                      <TouchableOpacity key={index.toString()} onPress={() => setactive(!active)} style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: active?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
                       <Text style={{color: active?'white':'black', fontWeight: '500', fontSize: 12}}>{val}</Text>
                     </TouchableOpacity>
                   );

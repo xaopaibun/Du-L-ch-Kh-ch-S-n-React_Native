@@ -192,7 +192,7 @@ const Home =  ({navigation}) => {
         </View>
         <View style={{height: 30}}></View>
         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
-            <TouchableOpacity onPress={() => navigation.navigate('ScreenXemGoiY')} style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 25, flex: 1, marginHorizontal: 16,justifyContent:'center', alignItems:'center'}}>
+            <TouchableOpacity onPress={() => navigation.navigate('ScreenXemGoiY_')} style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 25, flex: 1, marginHorizontal: 16,justifyContent:'center', alignItems:'center'}}>
                 <Text style={{color:'#FFFFFF', fontSize: 14, lineHeight: 17}}>Xem gợi ý</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('ScreenTaoLichTrinh')} style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 25,flex: 1, justifyContent:'center',marginHorizontal: 16, alignItems:'center'}}>

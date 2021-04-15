@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,Image,TextInput,ImageBackground,View,TouchableOpacity,FlatList,} from 'react-native';
 import { onChange, set } from 'react-native-reanimated';
 import { useDispatch , useSelector} from 'react-redux';
-const data_KQ = [
+const data = [
     {
         "iD" :"1",
         "Ten" : "Hà Nội",
@@ -30,8 +30,8 @@ const data_KQ = [
     },
     {
         "iD" :"6",
-        "Ten" : "Sa Pa",
-        "Content":"Thành phố mù sương"
+        "Ten" : "Hoà Bình",
+        "Content":"Miền núi Tây Bắc"
     },
     {
         "iD" :"7",
@@ -62,13 +62,18 @@ const data_KQ = [
 ];
 
 const ScreenTimKiem =  ({navigation}, props) => {
-    const [key, setkey] = React.useState('');
+    // const [ThongBao, setThongBao] = React.useState(''); 
+    const [TuKhoa, setTuKhoa] = React.useState(''); 
     const onChange = (key) =>{
-        setkey(key);
-       let M = data_KQ.filter((i) => i.Ten === 'Sa Pa');
-        
-        console.log(M);
-        
+        setTuKhoa(TuKhoa);
+        setKQ(filterItems(key))
+        // filterItems(key).length == 0 ? setThongBao('Không tìm thấy từ khoá bạn nhập') : setThongBao()
+    
+    }
+    const filterItems = (query) => {
+        return data.filter((el) =>
+            el.Ten.toLowerCase().indexOf(query.toLowerCase()) > -1
+        );
     }
     const dispatch = useDispatch();
     const [KQ, setKQ] = React.useState([]);
@@ -83,9 +88,9 @@ const ScreenTimKiem =  ({navigation}, props) => {
                    <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{color: '#B6B6B6'}}>Huỷ</Text></TouchableOpacity>
                 </View>
                 <View style={{backgroundColor: '#F7F7F7',flex: 9}}>
-                    
+                   {/* <Text>{ThongBao}</Text> */}
                         <FlatList 
-                            data = {data_KQ}
+                            data = {TuKhoa == '' ? KQ : data }
                             keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(

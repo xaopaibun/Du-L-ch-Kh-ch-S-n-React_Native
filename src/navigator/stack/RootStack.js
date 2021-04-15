@@ -35,6 +35,7 @@ import ScreenTongQuanLichTrinh from '../../components/TongQuanLichTrinh';
 import Profile from '../../components/Profile';
 import NguoiTheoDoi from '../../components/NguoiTheoDoi';
 import NguoiDangTheoDoi from '../../components/NguoiDangTheoDoi';
+import ScreenXemGoiY_ from '../../components/XemGoiY@';
 export default function RootStack({navigation}) {
   return (
     <NavigationContainer>
@@ -70,6 +71,7 @@ export default function RootStack({navigation}) {
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="NguoiTheoDoi" component={NguoiTheoDoi} />
         <Stack.Screen name="NguoiDangTheoDoi" component={NguoiDangTheoDoi} />
+        <Stack.Screen name="ScreenXemGoiY_" component={ScreenXemGoiY_} />
       </Stack.Navigator>
     </NavigationContainer>
   );
