@@ -90,7 +90,7 @@ const ScreenTimKiem =  ({navigation}, props) => {
                 <View style={{backgroundColor: '#F7F7F7',flex: 9}}>
                    {/* <Text>{ThongBao}</Text> */}
                         <FlatList 
-                            data = {TuKhoa == '' ? KQ : data }
+                            data = {TuKhoa !== '' ? KQ : data }
                             keyExtractor={item => item.iD}
                             renderItem={({item}) =>{
                                 return(

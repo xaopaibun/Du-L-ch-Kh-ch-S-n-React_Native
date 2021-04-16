@@ -1,4 +1,30 @@
-const initState = {};
+const initState = {
+    Data_QuanTam : [
+        {
+            "id": "1",
+            "img" :"https://vuonhoaphatgiao.com/uploads/noidung/images/phat_hoc/tam-linh.jpg",
+            "text":"Tâm linh"
+        },
+        {
+            "id": "2",
+            "img" :"https://cdn.vietnamtours247.com/2020/02/mot-so-net-tieu-bieu-van-hoa-viet-nam.png",
+            "text":"Văn hóa - Lịch sử"
+        },
+        {
+            "id": "3",
+            "img" :"https://botoquanmoc.com/upload_images/images/2019/10/09/IMG_0342-2(1).jpg",
+            "text":"Ẩm thực"
+        },
+        {
+            "id": "4",
+            "img" :"https://vcdn1-dulich.vnecdn.net/2018/06/19/Phu-Quoc-honeymoon-beach.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=g-Omn4qgZxh3okJe7scP_A",
+            "text":"Biển"
+        },
+    ],
+    NganSach:[
+        '1.000.000 - 2.000.000 đ', '3.000.000 - 5.000.000 đ'
+    ]
+};
 const reducer = (state = initState, action) => {
     switch (action.type) {
         case 'DuLieuLichTrinh' : 
@@ -29,7 +55,12 @@ const reducer = (state = initState, action) => {
             return { ...state, ThanhPhoChon: action.ThanhPho}
         case 'ThanhPhoDen':
             return { ...state, ThanhPhoChon: action.ThanhPho}
-        
+        case 'NguoiThamGia':
+            return { ...state, sum_NguoiThamGia: action.sum}
+        case 'NganSach':
+            return { ...state, val_NganSach: action.val}
+        case 'NgayThangChon':
+            return { ...state, NgayThangChon: action.val}
         default:
             return state
     }

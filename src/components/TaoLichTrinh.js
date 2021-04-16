@@ -26,7 +26,7 @@ const ScreenTaoLichTrinh =  ({navigation}) => {
     //const DiemDen = useSelector(state => state.DiemDen);
     const [isEnabled, setIsEnabled] = React.useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  
+    const sum_NguoiThamGia = useSelector(state => state.sum_NguoiThamGia)
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
@@ -43,7 +43,7 @@ const ScreenTaoLichTrinh =  ({navigation}) => {
                     </View>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/placeholders1.png')}  style={{width: 20, height: 20}}/></View>
-                        <TextInput onFocus={() => navigation.navigate('ScreenTimKiem')} placeholder = "Điểm đến"  placeholderTextColor='#989898' style={{padding: 10, flex: 9}}/>
+                        <TextInput onFocus={() => navigation.navigate('ScreenTimKiem')} placeholder = "Điểm đến"  placeholderTextColor='#989898' value={XuatPhat}  style={{padding: 10, flex: 9}}/>
                     </View>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/calendar1.png')}  style={{width: 20, height: 20}}/></View>
@@ -51,7 +51,7 @@ const ScreenTaoLichTrinh =  ({navigation}) => {
                     </View>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/friends1.png')}  style={{width: 20, height: 20}}/></View>
-                        <TextInput onFocus={() => navigation.navigate('ScreenNguoiThamGia')} placeholder = "Người tham gia" placeholderTextColor='#989898' style={{padding: 10, flex: 9}}/>
+                        <TextInput value={sum_NguoiThamGia} onFocus={() => navigation.navigate('ScreenNguoiThamGia')} placeholder = "Người tham gia" placeholderTextColor='#989898' style={{padding: 10, flex: 9}}/>
                     </View>
                     <View style={{marginVertical: 8, height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/open-lock1.png')}  style={{width: 20, height: 20}}/></View>
@@ -74,7 +74,6 @@ const ScreenTaoLichTrinh =  ({navigation}) => {
             </View>
             <Modal visible={visible} onDismiss={hideModal} >
                 <CalendarPicker_Custom  />
- 
             </Modal>
         </SafeAreaView>
     );

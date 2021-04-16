@@ -14,8 +14,14 @@ import {
 } from 'react-native';
 
 
-import { useSelector } from 'react-redux';
+import { useSelector , useDispatch} from 'react-redux';
 const ScreenNguoiThamGia =  ({navigation}) => {
+    const dispatch = useDispatch();
+    const onsubmit = () =>{
+        let sum = 'Người lớn: '+ nguoithamgia[0] + ', Trẻ em '+ nguoithamgia[1] + ', Em bé: '+ nguoithamgia[2];
+        dispatch({type :'NguoiThamGia', sum : sum});
+        navigation.goBack();
+    }
     //const Data_LichTrinh = useSelector(state => state.data_diadiem);
     const XuatPhat = useSelector(state => state.ThanhPhoChon);
     const [isEnabled, setIsEnabled] = React.useState(false);
@@ -76,7 +82,7 @@ const ScreenNguoiThamGia =  ({navigation}) => {
                     </View>
                 </View>
                 <View style={{flex: 1, justifyContent:'flex-end'}}>
-                    <TouchableOpacity style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 35,justifyContent:'center', alignItems:'center'}}>
+                    <TouchableOpacity onPress={onsubmit} style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 35,justifyContent:'center', alignItems:'center'}}>
                         <Text style={{color:'#FFFFFF', fontSize: 14, lineHeight: 17}}>Xong</Text>
                     </TouchableOpacity>
                 </View>

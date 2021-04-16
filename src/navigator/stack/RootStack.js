@@ -20,7 +20,7 @@ import ScreenCTNhaHang from '../../components/CTNhaHang';
 import ScreenChiTietKhachSan from '../../components/ChiTietKhachSan';
 import ScreenTaoLichTrinh from '../../components/TaoLichTrinh';
 import ScreenNguoiThamGia from '../../components/NguoiThamGia';
-import ScreenXemGoiY from '../../components/Xemgoiy';
+import ScreenCoTheBanQuanTam from '../../components/CoTheBanQuanTam';
 import ScreenDanhSachPhong from '../../components/DanhSachPhong';
 import ScreenDatPhong from '../../components/DatPhong';
 import ScreenYeuThich from '../../components/YeuThich';
@@ -35,7 +35,7 @@ import ScreenTongQuanLichTrinh from '../../components/TongQuanLichTrinh';
 import Profile from '../../components/Profile';
 import NguoiTheoDoi from '../../components/NguoiTheoDoi';
 import NguoiDangTheoDoi from '../../components/NguoiDangTheoDoi';
-import ScreenXemGoiY_ from '../../components/XemGoiY@';
+import ScreenXemGoiY_ from '../../components/XemGoiY';
 export default function RootStack({navigation}) {
   return (
     <NavigationContainer>
@@ -58,7 +58,7 @@ export default function RootStack({navigation}) {
         <Stack.Screen name="ScreenTaoLichTrinh" component={ScreenTaoLichTrinh} />
         <Stack.Screen name="ScreenNguoiThamGia" component={ScreenNguoiThamGia} />
         <Stack.Screen name="ScreenDanhSachPhong" component={ScreenDanhSachPhong} />
-        <Stack.Screen name="ScreenXemGoiY" component={ScreenXemGoiY} />
+        <Stack.Screen name="ScreenCoTheBanQuanTam" component={ScreenCoTheBanQuanTam} />
         <Stack.Screen name="ScreenDatPhong" component={ScreenDatPhong} />
         <Stack.Screen name="ScreenYeuThich" component={ScreenYeuThich} />
         <Stack.Screen name="ScreenCaiDat" component={ScreenCaiDat} />
