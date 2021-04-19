@@ -99,7 +99,7 @@ const Home =  ({navigation}) => {
         </View>
       );
     const renderItemLichTrinh = ({ item }) => (
-        <TouchableOpacity style={{width: 300, height: 230, marginLeft: 16, backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden'}}>
+        <TouchableOpacity onPress={() => navigation.navigate('ScreenTongQuanLichTrinh')} style={{width: 300, height: 230, marginLeft: 16, backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden'}}>
         <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
             <View style={{flex: 4}}><Image source={{uri : item.images[0]}}  style={{width: '100%', height: '100%'}}/></View>
             <View style={{flex: 6, marginLeft: 6, justifyContent: 'space-between'}}>

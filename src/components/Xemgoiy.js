@@ -90,7 +90,7 @@ const ScreenXemGoiY_ =  ({navigation}) => {
                 allowRangeSelection={true}
                 selectedRangeStartStyle={{backgroundColor:'#F8530D'}}
                 selectedRangeEndStyle={{backgroundColor:'#F8530D'}}
-                selectedRangeStyle={{backgroundColor:'#F8530D',opacity:0.1}}
+                selectedRangeStyle={{opacity: 0.1,backgroundColor:'#F8530D'}}
                 todayTextStyle='#F8530D'
                 customDatesStyles={customDatesStylesCallback}
                 customDayHeaderStyles={customDayHeaderStylesCallback}
@@ -136,7 +136,7 @@ const ScreenXemGoiY_ =  ({navigation}) => {
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() =>{
                         hideModal2();
-                        dispatch({type:'NgayThangChon', val:mindatetime + ' - '+maxdatetime })
+                        // dispatch({type:'NgayThangChon', val:mindatetime + ' - '+maxdatetime })
                     }}>
                         <Text style={{fontWeight: 'bold',color: '#FF5F24'}}>OK</Text>
                     </TouchableOpacity>
