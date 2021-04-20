@@ -38,11 +38,6 @@ const Home =  ({navigation}) => {
         setData_DiaDiemTheoMua(DiaDiemTheoMua);
         setData_KS_RS(KS_RS);
         setData_KM(KhuyenMai);
-        dispatch({type : 'DuLieuLichTrinh', data: LichTrinh})
-        dispatch({type : 'DuLieudiadiemphobien', data: DiaDiem})
-        dispatch({type : 'DuLieuKS_RS', data: KS_RS})
-        dispatch({type : 'DuLieuNhaHang', data: NhaHang})
-        dispatch({type :'DuLieutrainghiem', data : TraiNghiem})
         setLoading(false);
     }, []);
     const renderItemKS_RS = ({ item }) => (
@@ -290,9 +285,9 @@ const Home =  ({navigation}) => {
        </View> 
    
      } 
-    
-    <Image source={require('../assets/images/Frame7.png')}  style={{width: 89, height: 89, position: 'absolute', bottom: 10, right: 10, zIndex: 9}} />
+
     </ScrollView>
+    <Image source={require('../assets/images/Frame7.png')}  style={{width: 89, height: 89, position: 'absolute', bottom: 10, right: 10, zIndex: 0.1}} />
     </View>
   );
 };

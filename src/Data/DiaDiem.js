@@ -13,7 +13,7 @@ let DiaDiem = [
     },
     {
         "id" : "3",
-        "image" :"https://kinhnghiemdulichkct.com/wp-content/uploads/2018/05/Da-lat-lam-dong-thanh-pho-xu-lanh.jpg",  
+        "image" :"https://danhkhoireal.vn/wp-content/uploads/2020/01/Biet-thu-novaworld-da-lat-1.jpg",  
         "TenDiaDiem" : "Đà Lạt, Lâm Đồng",
         "ND" : "Đà Lạt hiện nay là thành phố loại 1 trực thuộc tỉnh ủy Lâm Đồng. Thành phố xinh đẹp và nổi tiếng này nằm ở trên Cao nguyên Lâm Viên của vùng Tây Nguyên nước Việt Nam."
         

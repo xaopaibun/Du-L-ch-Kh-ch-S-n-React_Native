@@ -16,6 +16,8 @@ import { Modal } from 'react-native-paper';
 // import CalendarPicker_Custom from './CalendarPicker_Custom';
 import CalendarPicker from 'react-native-calendar-picker';
 import { useSelector , useDispatch} from 'react-redux';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+const Tab = createMaterialTopTabNavigator();
 
 const ScreenXemGoiY_ =  ({navigation}) => {
     const NgayThangChon = useSelector(state => state.NgayThangChon);
@@ -143,28 +145,10 @@ const ScreenXemGoiY_ =  ({navigation}) => {
             </View>
         </View>
     )
-    return(
-        <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
-             <StatusBar barStyle='dark-content'/>
-            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
-                <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
-               <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Xem Gợi Ý</Text></View>
-               <View></View>
-            </View>
-            <ScrollView  style={{backgroundColor: '#E5E5E5', flex: 1, padding: 16}}>
-                <ScrollView style={{height: 30, flex: 1}} horizontal>
-                {
-                    Loai.map((val, index) =>{
-                        const [active, setactive] = React.useState(false);
-                            return(
-                            <TouchableOpacity key={index.toString()} onPress={() => setactive(!active)} style={{ marginHorizontal: 5, height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: active?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
-                            <Text style={{color: active?'white':'black', fontWeight: '500', fontSize: 12}}>{val}</Text>
-                            </TouchableOpacity>
-                        );
-                    })
-                }
-                </ScrollView>
-                <View style={{height: 30,  justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
+    const ABCDEF = () =>{
+        return(
+            <ScrollView style={{backgroundColor: '#E5E5E5'}}>
+            <View style={{height: 30,  justifyContent:'space-between', flexDirection: 'row', marginTop: 20}}>
                     <Text style={{color: '#000000', fontWeight: 'bold'}}>Có thể bạn quan tâm</Text>
                     <TouchableOpacity onPress={() =>navigation.navigate('ScreenCoTheBanQuanTam')}><Text style={{color: '#9E9E9E', fontSize: 12}}>Tất cả <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
                 </View>
@@ -219,6 +203,45 @@ const ScreenXemGoiY_ =  ({navigation}) => {
                     </View>
                 </View>
             </ScrollView >
+        );
+    }
+    return(
+        <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
+             <StatusBar barStyle='dark-content'/>
+            <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
+                <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
+               <View><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Xem Gợi Ý</Text></View>
+               <View></View>
+            </View>
+            <View  style={{backgroundColor: '#E5E5E5', flex: 1, padding: 16}}>
+                    <Tab.Navigator tabBarOptions={
+                    {
+                        tabStyle:{backgroundColor: '#E5E5E5'},
+                        
+                        pressOpacity:1
+                    }
+                }>
+                    <Tab.Screen name="LichNgay1FDSG" component={ABCDEF} options = {{tabBarLabel : ({focused}) => 
+                    <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                        <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Cặp đôi</Text>
+                    </View> }}/>
+
+                    <Tab.Screen name="LichNgay1FDSGEW" component={ABCDEF} options = {{tabBarLabel : ({focused}) => 
+                    <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                        <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Độc hành</Text>
+                    </View> }}/>
+
+                    <Tab.Screen name="LichNgay1FDSG3" component={ABCDEF} options = {{tabBarLabel : ({focused}) => 
+                    <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                        <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Gia đình</Text>
+                    </View> }}/>
+
+                    <Tab.Screen name="LichNgay1FDSG3de" component={ABCDEF} options = {{tabBarLabel : ({focused}) => 
+                    <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                        <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Tour</Text>
+                    </View> }}/>
+                </Tab.Navigator> 
+            </View>  
             <Modal visible={visible} onDismiss={hideModal} >
                 <CalendarPicker_Custom  />
             </Modal>

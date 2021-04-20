@@ -13,8 +13,26 @@ import {
   Switch,
   ImageBackground
 } from 'react-native';
+import DiaDiem from '../Data/DiaDiem';
+import DiaDiemTheoMua from '../Data/DiaDiemTheoMua';
+import KhuyenMai from '../Data/KhuyenMai';
+import KS_RS from '../Data/KS_RS';
+import NhaHang from '../Data/NhaHang';
+import LichTrinh from '../Data/LichTrinh';
+import TraiNghiem from '../Data/TraiNghiem';
+import { useDispatch , useSelector} from 'react-redux';
 
 const SplashScreen = () =>{
+  const dispatch = useDispatch();
+  React.useEffect(() =>{
+    dispatch({type : 'DuLieuLichTrinh', data: LichTrinh})
+    dispatch({type : 'DuLieudiadiemphobien', data: DiaDiem})
+    dispatch({type : 'DuLieuKS_RS', data: KS_RS})
+    dispatch({type : 'DuLieuNhaHang', data: NhaHang})
+    dispatch({type :'DuLieutrainghiem', data : TraiNghiem})
+    dispatch({type : 'DuLieuKhuyenMai', data: KhuyenMai})
+    dispatch({type :'DuLieuDiaDiemTheoMua', data : DiaDiemTheoMua})
+}, []);
     return(
         <View style={{flex:1, backgroundColor: '#E5E5E5'}}>
             <StatusBar barStyle='light-content'/>

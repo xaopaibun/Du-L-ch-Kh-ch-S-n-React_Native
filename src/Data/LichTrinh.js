@@ -2,7 +2,7 @@ let LichTrinh = [
     {
         "id" : "1",
         "images" : [
-            "https://kinhnghiemdulichkct.com/wp-content/uploads/2018/05/Da-lat-lam-dong-thanh-pho-xu-lanh.jpg",
+            "https://vnn-imgs-f.vgcloud.vn/2020/10/28/09/sau-da-lat-bat-dong-san-nao-o-lam-dong-hut-nha-dau-tu.jpg",
             "https://alocanhosg.com/wp-content/uploads/2021/01/tho-ng-tin-du-a-n-novaworld-da-la-t-la-m-do-ng-chu-da-u-tu-novaland.jpg",
             "https://vcdn1-dulich.vnecdn.net/2019/05/23/12-1558593963.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=sEbfKs9N6CgwUja6gayIJA",
             "https://tranhtreotuonghanoi.com/wp-content/uploads/2020/02/cua-hang-mua-tranh-treo-tuong-o-dat-lat-lam-dong-720x380.jpg",     

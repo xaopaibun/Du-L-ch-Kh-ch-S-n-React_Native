@@ -35,6 +35,10 @@ const reducer = (state = initState, action) => {
             return { ...state, data_diadiemphobien : action.data }
         case 'DuLieudiemdentheomua' : 
             return { ...state, data_diadiemthang12: action.data }
+        case 'DuLieuKhuyenMai' : 
+            return { ...state, data_KhuyenMai: action.data }
+        case 'DuLieuDiaDiemTheoMua' : 
+            return { ...state, data_DiaDiemTheoMua: action.data }
         case 'DuLieutrainghiem' : 
             return { ...state, data_trainghiem: action.data }
         case 'DuLieuKS_RS' : 
@@ -61,6 +65,18 @@ const reducer = (state = initState, action) => {
             return { ...state, val_NganSach: action.val}
         case 'NgayThangChon':
             return { ...state, NgayThangChon: action.val}
+        case 'Lay_Id_De_Xoa':
+            //console.log(action.id);
+            return { ...state, id_can_xoa: action.id}
+        case 'DuLieuDuLichABC':{
+           //console.log(action.Dulieu);
+            return { ...state, dulieudulichabc: action.Dulieu }
+        }
+        case 'Xoa_Item':
+          
+            console.log(state.dulieudulichabc.filter(val => val.id != state.id_can_xoa));
+            
+            return { ...state, dulieudulichabc:  state.dulieudulichabc.filter(val => val.id != state.id_can_xoa)}
         default:
             return state
     }

@@ -10,10 +10,13 @@ import {
   ScrollView,
   FlatList
 } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+const Tab = createMaterialTopTabNavigator();
+
 import LinearGradient from 'react-native-linear-gradient';
 
 import { useDispatch , useSelector} from 'react-redux';
-const Loai = ['Lịch trình', 'Máy bay', 'Khách sạn', 'Tham quan'];
+// const Loai = ['Lịch trình', 'Máy bay', 'Khách sạn', 'Tham quan'];
 const ScreenTongQuanLichTrinh =  ({navigation}) => {
   const Data = useSelector(state => state.data_diadiemphobien);
   const renderItemDiaDiem = ({ item }) => (
@@ -26,12 +29,12 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
   );
   const LichTrinh = () =>{
     return (
-      <View>
+      <View style={{backgroundColor: '#E5E5E5'}}>
       <ScrollView>
             <View style={{marginVertical: 10,  position: 'relative'}}>
               <View style={{height: 30, marginHorizontal: 16, justifyContent:'space-between', flexDirection: 'row'}}>
                 <Text style={{color: '#000000', fontWeight: 'bold'}}>Kế hoạch</Text>
-                <TouchableOpacity ><Text style={{color: '#9E9E9E', fontSize: 12}}>Tất cả <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('ChiTietLichTrinh')} ><Text style={{color: '#9E9E9E', fontSize: 12}}>Tất cả <Image source={require('../assets/images/Right.png')}  style={{width: 3, height: 7}}/></Text></TouchableOpacity>
               </View>
               <FlatList
                 data = {Data}
@@ -83,7 +86,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
   }
   const ChiTietKhachSan = () =>{
     return(
-      <View style={{flex: 10, padding: 16, marginBottom: 10}}>
+      <View style={{flex: 10, padding: 16, marginBottom: 10, backgroundColor: '#E5E5E5' }}>
         <View style={{flex: 10}}>
           <View style={{height: 70, justifyContent: 'space-between', marginVertical: 10}}>
             <Text style={{fontWeight: '500'}}>Khách sạn Phương Đông</Text>
@@ -112,7 +115,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
   }
   const MayBay = () =>{
     return(
-      <View style={{flex:1, marginBottom: 20 }}>
+      <View style={{flex:1, marginBottom: 20, backgroundColor: '#E5E5E5' }}>
           
           <View style={{alignItems: 'center', justifyContent: 'space-around', flex: 0.4}}>
             <Text>Hà Nội - Quy Nhơn</Text>
@@ -155,21 +158,21 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
           </View>
           <View style={{flex: 0.2, paddingHorizontal: 16}}>
              <TouchableOpacity style={{ shadowColor: "rgba(174, 174, 174, 0.3)",
-shadowOffset: {
-	width: 0,
-	height: 4,
-},
-shadowOpacity: 0.30,
-shadowRadius: 4.65,
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.30,
+                  shadowRadius: 4.65,
 
-elevation: 8,justifyContent: 'center', alignItems: 'center', height: 25, backgroundColor: '#FFFFFF', borderRadius: 5, flexDirection: 'row'}}>
+                  elevation: 8,justifyContent: 'center', alignItems: 'center', height: 25, backgroundColor: '#FFFFFF', borderRadius: 5, flexDirection: 'row'}}>
               <Image source={require('../assets/images/timkiem2.png')}  style={{width: 12, height: 12, marginRight: 5}}/>
                   <Text style={{color: '#FF5F24', fontSize: 10, fontWeight: '600'}}>Tìm chuyến bay khác</Text>
             </TouchableOpacity>
           </View>
           <View style={{width: '100%',padding: 16, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', position: 'absolute', left: 0, bottom: 0, zIndex: 1}}>
                 <Text style={{color: '#FF5F24', fontSize: 16, fontWeight: 'bold'}}>2,600,000 đ/ người</Text>
-                <TouchableOpacity   style={{ height: 25, width: 71,justifyContent: 'center', alignItems: 'center',backgroundColor: '#FF5F24', borderRadius: 5}}>
+                <TouchableOpacity onPress={() => navigation.navigate('ChiTietLichTrinh')}  style={{ height: 25, width: 71,justifyContent: 'center', alignItems: 'center',backgroundColor: '#FF5F24', borderRadius: 5}}>
                       <Text style={{color: 'white', fontWeight: '500', fontSize: 12}}>Đặt ngay</Text>
                 </TouchableOpacity>
             </View>
@@ -178,7 +181,7 @@ elevation: 8,justifyContent: 'center', alignItems: 'center', height: 25, backgro
   }
   const ThamQuan = () =>{
     return(
-      <View style={{flex: 1, marginHorizontal: 16}}>
+      <View style={{flex: 1, paddingHorizontal: 16,  backgroundColor: '#E5E5E5'}}>
           <View style={{flex: 0.9}}>
             <View style={{height: 86, flexDirection: 'row', padding: 16, backgroundColor: 'white', borderRadius: 5}}>
               <View style={{justifyContent: 'space-between', flex: 5}}>
@@ -207,41 +210,48 @@ elevation: 8,justifyContent: 'center', alignItems: 'center', height: 25, backgro
       </View>
     );
   }
+  
     return(
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: '#E5E5E5'}}>
            <StatusBar barStyle='light-content'/>
           
-          <ImageBackground source={{uri : 'https://icdn.dantri.com.vn/thumb_w/640/2020/01/09/7-1578580921457.jpg'}} resizeMode="stretch" style={{ height: 180}} />
+          <ImageBackground source={{uri : 'https://icdn.dantri.com.vn/thumb_w/640/2020/01/09/7-1578580921457.jpg'}} resizeMode="stretch" style={{ height: 180}} >
+          <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back2.png')}  style={{marginTop: 50,marginLeft: 20, width: 7, height: 12}}/></TouchableOpacity>
+          </ImageBackground>
           <View style={{height: 90,justifyContent: 'center', alignItems: 'center', marginTop: -30, justifyContent: 'space-around'}}>
             <Image source={{uri : 'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=7mR09h9zVWcAX_rv-6N&_nc_ht=scontent.fhan3-1.fna&oh=2b612c4b76f8ba943ae89f84170ce6b6&oe=60A20ED7'}}  style={{width: 50, height: 50, borderRadius: 50}}/>
             <Text>Quy Nhơn, Bình Định</Text>
             <Text>25/04 - 30/04</Text>
           </View>
-          <View style={{marginTop: 10,height: 40}}>
-          <ScrollView style={{ height: '100%'}} horizontal>
-            {
-                Loai.map((val, index) =>{
-                  const [active, setactive] = React.useState(false);
-                    return(
-                      <TouchableOpacity key={index.toString()} onPress={() => setactive(!active)} style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: active?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
-                      <Text style={{color: active?'white':'black', fontWeight: '500', fontSize: 12}}>{val}</Text>
-                    </TouchableOpacity>
-                  );
-                })
-            }
-            
-          </ScrollView >
-          </View>
-          
-          
           <View style={{flex: 1}}>
-            {/* <LichTrinh /> */}
-            {/* <ChiTietKhachSan/> */}
-            
-            <MayBay/>
-            {/* <ThamQuan/> */}
+          <Tab.Navigator tabBarOptions={
+              {
+                  tabStyle:{backgroundColor: '#E5E5E5'},
+                  
+                  pressOpacity:1
+              }
+          }>
+              <Tab.Screen name="LichNgay1FDSG" component={LichTrinh} options = {{tabBarLabel : ({focused}) => 
+              <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                 <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Lịch Trình</Text>
+              </View> }}/>
+
+              <Tab.Screen name="LichNgay1FDSGEW" component={MayBay} options = {{tabBarLabel : ({focused}) => 
+              <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                 <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Máy Bay</Text>
+              </View> }}/>
+
+              <Tab.Screen name="LichNgay1FDSG3" component={ChiTietKhachSan} options = {{tabBarLabel : ({focused}) => 
+              <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                 <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Khách Sạn</Text>
+              </View> }}/>
+
+              <Tab.Screen name="LichNgay1FDSG3de" component={ThamQuan} options = {{tabBarLabel : ({focused}) => 
+              <View style={{ marginHorizontal: 10,height: 30, width: 80,justifyContent: 'center', alignItems: 'center',backgroundColor: focused?'#FF5F24':'#ECF1FF', borderRadius: 5}}>
+                 <Text style={{color: focused?'white':'black', fontWeight: '500', fontSize: 12}}>Tham Quan</Text>
+              </View> }}/>
+          </Tab.Navigator>
           </View>
-          
         </View>
     );
 }
