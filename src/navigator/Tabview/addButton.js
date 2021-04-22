@@ -103,7 +103,7 @@ const AddButton  = ({navigation}) => {
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={{ position: "absolute", left: timeX1, top: timeY1 }}>
-                    <TouchableOpacity style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('DanhGia')} style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
                         <View style={styles.secondaryButton}>
                             <Image source={require('../../assets/images/bongden.png')}  style={{width: 12, height: 12}} />
                         </View>

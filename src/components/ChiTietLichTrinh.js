@@ -93,63 +93,129 @@ const ChiTietLichTrinh = ({navigation}) =>{
         
     }
     const LichNgay1 = () =>{
-        const renderItem = ({item}) =>{
-            const Layid = () =>{
-                showModal();
-                dispatch({type:'Lay_Id_De_Xoa', id : item.id});          
-            }
-            return(
-            <View style={{marginTop: 9, height: 165, justifyContent: 'space-around'}}>
-                    <Text>{item.gioxuatphat}</Text>
-                    <View style={{backgroundColor: 'white',borderRadius: 5,overflow: 'hidden',height:80, flexDirection: 'row', justifyContent:'flex-end', shadowColor: "#000",
-                                        shadowOffset: {
-                                            width: 0,
-                                            height: 3,
-                                        },
-                                        shadowOpacity: 0.27,
-                                        shadowRadius: 4.65,
-                                        elevation: 6}}>
-                        <View style={{flex: 0.3}}>
-                            <Image source={{uri : item.img}} style={{width: '100%', height: '100%'}}/>
-                        </View>
-                        <View style={{flex: 0.4, justifyContent:'space-around', marginLeft: 13}}>
-                            <Text style={{fontWeight: '600'}}>{item.tendd}</Text>
-                            <Text style={{fontWeight: '600', color: '#FF5F24', fontSize: 10}}>{item.thoigianvuichoi}</Text>
-                        </View>
-                        <View style={{flex: 0.3, justifyContent:'space-around', alignItems: 'flex-end', marginRight: 10}}>
-                            <TouchableOpacity onPress={Layid}><Image source={require('../assets/images/round-delete-button1.png')}  style={{width: 14, height: 14}}/></TouchableOpacity>
-                            <TouchableOpacity><Text style={{ color: 'rgba(255, 95, 36, 0.7)', fontSize: 10}}>Chọn điểm khác</Text></TouchableOpacity>
-                        </View>
-                    </View>
-                    <View style={{height: 35, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={require('../assets/images/oto.png')}  style={{width: 13, height: 9.85, marginRight: 5}}/>
-                            <Text style={{fontSize: 8, color: '#3076FE', justifyContent: 'center'}}> {item.quangduongdi}</Text>
-                        </View>
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={require('../assets/images/donghocat.png')}  style={{width: 9.14, height: 12, marginRight: 5}}/>
-                            <Text style={{fontSize: 8, color: '#FF5F24', justifyContent: 'center'}}> {item.thoigiandi}</Text>
-                        </View>
-                        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={require('../assets/images/notebook.png')}  style={{width: 13, height: 13}}/>
-                        </View>
-                    </View>
-                </View>
-                );
-        }
+        // const renderItem = ({item}) =>{
+        //     const Layid = () =>{
+        //         showModal();
+        //         dispatch({type:'Lay_Id_De_Xoa', id : item.id});          
+        //     }
+        //     return(
+        //     <View style={{marginTop: 9, height: 165, flexDirection: 'row'}}>
+        //             <View style={{flex: 0.5}}>
+        //                 <View style={{marginTop: 70,height: 15, width: 15, backgroundColor: 'black', borderRadius: 50, justifyContent: 'center', alignItems: 'center'}}>
+        //                     <View style={{height: 125, width: 0, position: 'absolute', top: 30, left: 7, zIndex: 1, borderColor: '#C5C5C5', borderStyle: 'dashed', borderWidth: 1}}></View>
+        //                     <Text style={{color: 'white', fontSize: 10}}>{item.id}</Text>
+        //                 </View>
+        //             </View>
+        //             <View style={{flex: 9.5,marginLeft: 12, justifyContent: 'space-around'}}>
+        //                 <Text>{item.gioxuatphat}</Text>
+        //                 <View style={{backgroundColor: 'white',borderRadius: 5,overflow: 'hidden',height:80, flexDirection: 'row', justifyContent:'flex-end', shadowColor: "#000",
+        //                                     shadowOffset: {
+        //                                         width: 0,
+        //                                         height: 3,
+        //                                     },
+        //                                     shadowOpacity: 0.27,
+        //                                     shadowRadius: 4.65,
+        //                                     elevation: 6}}>
+        //                     <View style={{flex: 0.3}}>
+        //                         <Image source={{uri : item.img}} style={{width: '100%', height: '100%'}}/>
+        //                     </View>
+        //                     <View style={{flex: 0.4, justifyContent:'space-around', marginLeft: 13}}>
+        //                         <Text style={{fontWeight: '600'}}>{item.tendd}</Text>
+        //                         <Text style={{fontWeight: '600', color: '#FF5F24', fontSize: 10}}>{item.thoigianvuichoi}</Text>
+        //                     </View>
+        //                     <View style={{flex: 0.3, justifyContent:'space-around', alignItems: 'flex-end', marginRight: 10}}>
+        //                         <TouchableOpacity onPress={Layid}><Image source={require('../assets/images/round-delete-button1.png')}  style={{width: 14, height: 14}}/></TouchableOpacity>
+        //                         <TouchableOpacity><Text style={{ color: 'rgba(255, 95, 36, 0.7)', fontSize: 10}}>Chọn điểm khác</Text></TouchableOpacity>
+        //                     </View>
+        //                 </View>
+        //                 <View style={{height: 35, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
+        //                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        //                         <Image source={require('../assets/images/oto.png')}  style={{width: 13, height: 9.85, marginRight: 5}}/>
+        //                         <Text style={{fontSize: 8, color: '#3076FE', justifyContent: 'center'}}> {item.quangduongdi}</Text>
+        //                     </View>
+        //                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        //                         <Image source={require('../assets/images/donghocat.png')}  style={{width: 9.14, height: 12, marginRight: 5}}/>
+        //                         <Text style={{fontSize: 8, color: '#FF5F24', justifyContent: 'center'}}> {item.thoigiandi}</Text>
+        //                     </View>
+        //                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        //                         <Image source={require('../assets/images/notebook.png')}  style={{width: 13, height: 13}}/>
+        //                     </View>
+        //                 </View>
+        //             </View>
+        //         </View>
+        //         );
+        // }
         return(
             <View style={{flex: 1,  backgroundColor: '#E5E5E5'}}>
-                 <FlatList
+                 {/* <FlatList
                         data = {dulieudulichabc}
                         keyExtractor={item => item.id}
                         renderItem={renderItem}
                         style={{paddingRight: 16}}
                        
-                    />
-                
-                <TouchableOpacity style={{marginVertical: 20, height: 25, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                    <Image source={require('../assets/images/plus-sign-in-circle1.png')}  style={{width: 13, height: 13}}/><Text style={{color: '#FF5F24', fontSize: 10}}>  Thêm điểm đi</Text>
-                </TouchableOpacity>
+                    /> */}
+                <ScrollView style={{paddingRight: 16, marginBottom:20}}>
+                {
+                    dulieudulichabc && dulieudulichabc.map((item, index) =>{
+                        const Layid = () =>{
+                            showModal();
+                            dispatch({type:'Lay_Id_De_Xoa', id : item.id});          
+                        }
+                        return(
+                            <View key = {item.id.toString()} style={{marginTop: 9, height: 165, flexDirection: 'row'}}>
+                                    <View style={{flex: 0.5}}>
+                                        <View style={{marginTop: 70,height: 15, width: 15, backgroundColor: 'black', borderRadius: 50, justifyContent: 'center', alignItems: 'center'}}>
+                                            {
+                                                index + 1 == dulieudulichabc.length ? <View/>: <View style={{height: 125, width: 0, position: 'absolute', top: 30, left: 7, zIndex: 1, borderColor: '#C5C5C5', borderStyle: 'dashed', borderWidth: 1}}></View>
+                                            }
+                                            
+                                            <Text style={{color: 'white', fontSize: 10}}>{index + 1}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{flex: 9.5,marginLeft: 12, justifyContent: 'space-around'}}>
+                                        <Text>{item.gioxuatphat}</Text>
+                                        <View style={{backgroundColor: 'white',borderRadius: 5,overflow: 'hidden',height:80, flexDirection: 'row', justifyContent:'flex-end', shadowColor: "#000",
+                                                            shadowOffset: {
+                                                                width: 0,
+                                                                height: 3,
+                                                            },
+                                                            shadowOpacity: 0.27,
+                                                            shadowRadius: 4.65,
+                                                            elevation: 6}}>
+                                            <View style={{flex: 0.3}}>
+                                                <Image source={{uri : item.img}} style={{width: '100%', height: '100%'}}/>
+                                            </View>
+                                            <View style={{flex: 0.4, justifyContent:'space-around', marginLeft: 13}}>
+                                                <Text style={{fontWeight: '600'}}>{item.tendd}</Text>
+                                                <Text style={{fontWeight: '600', color: '#FF5F24', fontSize: 10}}>{item.thoigianvuichoi}</Text>
+                                            </View>
+                                            <View style={{flex: 0.3, justifyContent:'space-around', alignItems: 'flex-end', marginRight: 10}}>
+                                                <TouchableOpacity onPress={Layid}><Image source={require('../assets/images/round-delete-button1.png')}  style={{width: 14, height: 14}}/></TouchableOpacity>
+                                                <TouchableOpacity><Text style={{ color: 'rgba(255, 95, 36, 0.7)', fontSize: 10}}>Chọn điểm khác</Text></TouchableOpacity>
+                                            </View>
+                                        </View>
+                                        <View style={{height: 35, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
+                                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                                <Image source={require('../assets/images/oto.png')}  style={{width: 13, height: 9.85, marginRight: 5}}/>
+                                                <Text style={{fontSize: 8, color: '#3076FE', justifyContent: 'center'}}> {item.quangduongdi}</Text>
+                                            </View>
+                                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                                <Image source={require('../assets/images/donghocat.png')}  style={{width: 9.14, height: 12, marginRight: 5}}/>
+                                                <Text style={{fontSize: 8, color: '#FF5F24', justifyContent: 'center'}}> {item.thoigiandi}</Text>
+                                            </View>
+                                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                                                <Image source={require('../assets/images/notebook.png')}  style={{width: 13, height: 13}}/>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            );
+                    })
+                }
+                    <TouchableOpacity style={{marginVertical: 20, height: 25, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                        <Image source={require('../assets/images/plus-sign-in-circle1.png')}  style={{width: 13, height: 13}}/><Text style={{color: '#FF5F24', fontSize: 10}}>  Thêm điểm đi</Text>
+                    </TouchableOpacity>
+                </ScrollView>
             </View>
         );
     }

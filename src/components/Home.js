@@ -71,9 +71,9 @@ const Home =  ({navigation}) => {
             navigation.navigate('ScreenCTDiaDiem');
         }} style={{width: 150, height: 200, marginRight: 16,  borderRadius: 5, overflow: 'hidden'}}>
                 <Image source={{uri : item.image}} style={{width: 150, height: 200}}/>
-                <LinearGradient colors={['rgba(77, 77, 77, 0)','#000000']} style={{position: 'absolute', bottom: 0, zIndex: 1, height: 20, width:'100%'}}>
-                    <Text style={{ color:'white', fontSize: 13, fontWeight: '600', backgroundColor:'black',  textAlign:'center'}}>{item.TenDiaDiem}</Text>
-                </LinearGradient>
+                <View style={{position: 'absolute', bottom: 0, zIndex: 1, height: 20, width:'100%'}}>
+                    <Text style={{ color:'white', fontSize: 13, fontWeight: '600',  textAlign:'center'}}>{item.TenDiaDiem}</Text>
+                </View>
         </TouchableOpacity>
       );
       const renderItemKhuyenMai= ({ item }) => (
@@ -85,13 +85,13 @@ const Home =  ({navigation}) => {
         </TouchableOpacity>
       );
       const renderItemTraiNghiem= ({ item }) => (
-        <View style={{height: 280, width: 220, marginRight: 16}}>
+        <TouchableOpacity onPress={() => navigation.navigate('ScreenChiTietKhamPha')} style={{height: 280, width: 220, marginRight: 16}}>
             <Image source={{uri : item.image}}  style={{width: 220,height: 200, borderRadius: 5}}/>
             <View style={{marginTop: 12, justifyContent:'space-between', flex: 0.5}}>
                 <Text style={{fontWeight: '500', fontSize: 14}}>{item.TenTraiNghiem}</Text>
                 <Text style={{color: '#3076FE', fontSize: 10}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {item.DiaChi}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
       );
     const renderItemLichTrinh = ({ item }) => (
         <TouchableOpacity onPress={() => navigation.navigate('ScreenTongQuanLichTrinh')} style={{width: 300, height: 230, marginLeft: 16, backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden'}}>

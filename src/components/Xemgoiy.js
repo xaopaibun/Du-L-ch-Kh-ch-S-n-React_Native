@@ -36,9 +36,9 @@ const ScreenXemGoiY_ =  ({navigation}) => {
     const sum_NguoiThamGia = useSelector(state => state.sum_NguoiThamGia)
     const NganSach = ['1.000.000 - 2.000.000 đ', '3.000.000 - 4.000.000 đ']
     const dispatch = useDispatch();
-    
+    const [Tien, setTien] = React.useState();
     const CalendarPicker_Custom = () =>{
-     
+       
         const customDayHeaderStylesCallback = ({ dayOfWeek, month, year }) => {
             switch (dayOfWeek) { // can also evaluate month, year
                 case 1:
@@ -128,17 +128,16 @@ const ScreenXemGoiY_ =  ({navigation}) => {
                             );
                         })
                     }
-                    
-                    <TextInput placeholder='Chọn khác' placeholderTextColor="#ECECEC" />
-            
+                
+                   <TextInput keyboardType='numeric' onChangeText={(money) => setTien(money)}  placeholder='Tùy chọn khác' placeholderTextColor="#ECECEC" /> 
             </View>
             <View style={{height: 50 ,flexDirection: 'row', justifyContent: 'space-around'}}>
                     <TouchableOpacity onPress={hideModal2}>
                         <Text style={{fontWeight: 'bold',color: '#9A9A9A'}}>CANCEL</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() =>{
+                        dispatch({type: "NganSach", val: Tien});
                         hideModal2();
-                        // dispatch({type:'NgayThangChon', val:mindatetime + ' - '+maxdatetime })
                     }}>
                         <Text style={{fontWeight: 'bold',color: '#FF5F24'}}>OK</Text>
                     </TouchableOpacity>
@@ -197,7 +196,7 @@ const ScreenXemGoiY_ =  ({navigation}) => {
                         
                     </View>
                     <View style={{flex: 1, justifyContent: 'flex-end'}}>
-                        <TouchableOpacity style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 35,justifyContent:'center', alignItems:'center'}}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ScreenKQGoiY')} style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 35,justifyContent:'center', alignItems:'center'}}>
                             <Text style={{color:'#FFFFFF', fontSize: 14, lineHeight: 17}}>Xem gợi ý</Text>
                         </TouchableOpacity>
                     </View>

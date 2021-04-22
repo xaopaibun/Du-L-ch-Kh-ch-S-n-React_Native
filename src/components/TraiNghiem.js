@@ -19,7 +19,7 @@ const ScreenTraiNghiem=  ({navigation}) => {
     const Data= useSelector(state => state.data_trainghiem);
    
     const renderItemTraiNghiem = ({ item }) => (
-        <View style={{height: 243,flex: 1, backgroundColor:'white', marginBottom: 16, borderRadius: 5, overflow:'hidden'}}>
+        <TouchableOpacity onPress={() => navigation.navigate('ScreenChiTietKhamPha')} style={{height: 243,flex: 1, backgroundColor:'white', marginBottom: 16, borderRadius: 5, overflow:'hidden'}}>
            <View style={{flex: 0.75}}>
             <Image source={{uri : item.image}}  style={{height: 160, borderRadius: 5}} resizeMode='stretch'/>
            </View>
@@ -28,7 +28,7 @@ const ScreenTraiNghiem=  ({navigation}) => {
                 <Text style={{color: '#3076FE', fontSize: 10}}><Image source={require('../assets/images/Vector.png')}  style={{width: 7, height: 10}}/> {item.DiaChi}</Text>
                 <Text style={{fontSize: 12, fontWeight: '400'}}>Từ <Text style={{color:'#FF5F24'}}>{item.Gia}</Text></Text>
             </View>
-        </View>
+        </TouchableOpacity>
       );
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>

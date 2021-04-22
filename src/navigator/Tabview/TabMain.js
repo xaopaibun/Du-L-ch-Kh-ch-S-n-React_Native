@@ -7,6 +7,7 @@ import ScreenThongTinCaNhan from '../../components/ThongTinCaNhan';
 import Tabheader from './tabheader';
 import ScreenLogin from '../../components/Login';
 import DanhGia from '../../components/DanhGia';
+import ScreenLichTrinhDangDi from '../../components/LichTrinhDangDi';
 const Tab = createBottomTabNavigator();
 const hello = () => {
     return null
@@ -18,7 +19,7 @@ export default function Tabview() {
         <Tab.Screen name="Home" component={Home}  options ={{tabBarIcon : ({focused}) =>   focused ? <Image source={require('../../assets/images/timkiem2.png')}  style={{width: 18, height: 18}} /> : <Image source={require('../../assets/images/timkiem.png')}  style={{width: 18, height: 18}} /> , tabBarLabel: ''}} />
         <Tab.Screen name="Tabheader" component={Tabheader}  options ={{tabBarIcon : ({focused}) =>    focused ? <Image source={require('../../assets/images/gio1.png')}  style={{width: 18, height: 18}} /> : <Image source={require('../../assets/images/gio2.png')}  style={{width: 18, height: 18}} />, tabBarLabel: ''}} />
         <Tab.Screen name="Botton5" component={hello}  options ={{tabBarOnPress: () => {} ,tabBarIcon : () =>   <AddButton/>, tabBarLabel: ''}} />
-        <Tab.Screen name="Home2" component={DanhGia}  options ={{tabBarIcon : ({focused}) =>   focused ? <Image source={require('../../assets/images/chuong1.png')}  style={{width: 18, height: 18}} />: <Image source={require('../../assets/images/chuong.png')}  style={{width: 18, height: 18}} />, tabBarLabel: ''}} />
+        <Tab.Screen name="Home2" component={ScreenLichTrinhDangDi}  options ={{tabBarIcon : ({focused}) =>   focused ? <Image source={require('../../assets/images/chuong1.png')}  style={{width: 18, height: 18}} />: <Image source={require('../../assets/images/chuong.png')}  style={{width: 18, height: 18}} />, tabBarLabel: ''}} />
         <Tab.Screen name="ScreenThongTinCaNhan" component={ScreenThongTinCaNhan}  options ={{tabBarIcon : ({focused}) =>   focused ? <Image source={require('../../assets/images/user2.png')}  style={{width: 18, height: 18}} /> : <Image source={require('../../assets/images/user.png')}  style={{width: 18, height: 18}} />, tabBarLabel: ''}} />
       </Tab.Navigator>
     

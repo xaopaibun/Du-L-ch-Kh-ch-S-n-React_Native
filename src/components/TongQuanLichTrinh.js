@@ -190,7 +190,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
                 <Text style={{fontWeight: 'bold', fontSize: 12}}>120.000đ/ 2 vé/ 2 người</Text>
               </View>
               <View style={{flex: 5, justifyContent: 'flex-end', alignItems: 'flex-end'}}>
-                <TouchableOpacity><Text style={{fontSize: 10, color: '#FF5F24'}}>Chi tiết</Text></TouchableOpacity>
+                <TouchableOpacity onPress = {() => navigation.navigate('ChiTietThamQuan')}><Text style={{fontSize: 10, color: '#FF5F24'}}>Chi tiết</Text></TouchableOpacity>
               </View>
             </View>
           </View>
