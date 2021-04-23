@@ -23,7 +23,8 @@ const initState = {
     ],
     NganSach:[
         '1.000.000 - 2.000.000 đ', '3.000.000 - 5.000.000 đ'
-    ]
+    ],
+    soluongsao: 0
 };
 const reducer = (state = initState, action) => {
     switch (action.type) {
@@ -77,6 +78,9 @@ const reducer = (state = initState, action) => {
             console.log(state.dulieudulichabc.filter(val => val.id != state.id_can_xoa));
             
             return { ...state, dulieudulichabc:  state.dulieudulichabc.filter(val => val.id != state.id_can_xoa)}
+        case 'Sao':
+            soluongsao = parseInt(action.soluongsao) + parseInt(state.soluongsao);
+            return { ...state, soluongsao: soluongsao}
         default:
             return state
     }

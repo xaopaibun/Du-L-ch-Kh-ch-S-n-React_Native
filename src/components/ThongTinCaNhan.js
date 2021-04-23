@@ -12,16 +12,20 @@ import {
 import RateApp from './RateApp';
 
 import { Modal, Portal, Button, Provider } from 'react-native-paper';
+import { useDispatch , useSelector} from 'react-redux';
 const ScreenThongTinCaNhan =  ({navigation}) => {
   
     // const [modalVisible, setModalVisible] = React.useState(false);
     const [visible, setVisible] = React.useState(false);
-
+    const nutButton = useSelector(state => state.nutButton);
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>         
             <StatusBar barStyle='dark-content'/>
+            {
+            nutButton ?  <View style={{backgroundColor: 'rgba(0, 0, 0, 0.7)', width: '100%', height: '100%',position:'absolute', top : 0, left: 0, zIndex: 9999999999}}></View> : <View></View>
+        }
             <View style={{height: 40,  alignItems:'center', marginVertical: 10, backgroundColor: '#ffffff', justifyContent: 'center'}}>
                 <Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Thông Tin Cá Nhân</Text>
             </View>

@@ -240,7 +240,8 @@ const ChiTietLichTrinh = ({navigation}) =>{
                         tabStyle:{backgroundColor: '#E5E5E5', marginBottom: 1},
                         labelStyle:{textTransform : 'none', fontSize: 12, fontWeight: '500'}, 
                         indicatorStyle: { backgroundColor: 'black'},
-                        inactiveTintColor: '#000000'
+                        inactiveTintColor: '#000000',
+                        
                     }
                 }>
                     <Tab.Screen name="LichNgay1" component={LichNgay1} options = {{tabBarLabel : ({focused}) => <View style={{alignItems: 'center'}}>
