@@ -73,8 +73,9 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
                   </View>
               </View>
             </View>
+            <View style={{height: 70}}/>
             </ScrollView>
-            <View style={{width: '100%',padding: 16, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', position: 'absolute', left: 0, bottom: 0, zIndex: 1}}>
+            <View style={{ width: '100%',padding: 16, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', position: 'absolute', left: 0, bottom: 0, zIndex: 1}}>
                 <Text style={{color: '#FF5F24', fontSize: 16, fontWeight: 'bold'}}>5,200,000 đ/ người</Text>
                 <TouchableOpacity   style={{ height: 25, width: 71,justifyContent: 'center', alignItems: 'center',backgroundColor: '#FF5F24', borderRadius: 5}}>
                       <Text style={{color: 'white', fontWeight: '500', fontSize: 12}}>Đặt ngay</Text>
@@ -115,7 +116,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
   }
   const MayBay = () =>{
     return(
-      <View style={{flex:1, marginBottom: 20, backgroundColor: '#E5E5E5' }}>
+      <View style={{flex:1,  backgroundColor: '#E5E5E5' }}>
           
           <View style={{alignItems: 'center', justifyContent: 'space-around', flex: 0.4}}>
             <Text>Hà Nội - Quy Nhơn</Text>
@@ -184,7 +185,7 @@ const ScreenTongQuanLichTrinh =  ({navigation}) => {
       <View style={{flex: 1, paddingHorizontal: 16,  backgroundColor: '#E5E5E5'}}>
           <View style={{flex: 0.9}}>
             <View style={{height: 86, flexDirection: 'row', padding: 16, backgroundColor: 'white', borderRadius: 5}}>
-              <View style={{justifyContent: 'space-between', flex: 5}}>
+              <View style={{justifyContent: 'space-between', flex: 5, marginVertical: 10}}>
                 <Text style={{fontWeight: '500', fontSize: 13}}>Bãi Kỳ Co</Text>
                 <Text style={{color: '#828282', fontSize: 12}}>5/12</Text>
                 <Text style={{fontWeight: 'bold', fontSize: 12}}>120.000đ/ 2 vé/ 2 người</Text>

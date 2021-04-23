@@ -41,6 +41,7 @@ import ChiTietThamQuan from '../../components/ChiTietThamQuan';
 import ScreenKQGoiY from '../../components/KQGoiY';
 import ScreenChiTietKhamPha from '../../components/ChiTietKhamPha';
 import DanhGia from '../../components/DanhGia';
+import ScreenCombo from '../../components/Combo';
 export default function RootStack({navigation}) {
   return (
     <NavigationContainer>
@@ -82,6 +83,7 @@ export default function RootStack({navigation}) {
         <Stack.Screen name="ScreenKQGoiY" component={ScreenKQGoiY} />
         <Stack.Screen name="ScreenChiTietKhamPha" component={ScreenChiTietKhamPha} />
         <Stack.Screen name="DanhGia" component={DanhGia} />
+        <Stack.Screen name="ScreenCombo" component={ScreenCombo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

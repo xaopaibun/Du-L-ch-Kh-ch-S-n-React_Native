@@ -10,9 +10,16 @@ import {
   TextInput,
   KeyboardAvoidingView
 } from 'react-native';
-
+import { useDispatch , useSelector} from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient'
 const ScreenLogin =  ({navigation}) => {
+    const [Phone, setPhone] = React.useState('');
+    const dispatch = useDispatch();
+    const SubmitLogin = () => {
+        navigation.navigate('ScreenOTP');
+        dispatch({type : 'SODIENTHOAI', SDT : Phone})
+    }
+
     return(
         <View style={{width: '100%', height: '100%', position: 'relative'}}>
            
@@ -32,11 +39,11 @@ const ScreenLogin =  ({navigation}) => {
                                     <Text style={{color: 'white', fontSize: 20, fontWeight: '600'}}>|</Text>
                                 </View>
                                 <View style={{flex: 6.5, paddingLeft: 10, justifyContent: 'center'}}>
-                                    <TextInput style={{color: 'white', fontSize: 18}} keyboardType = {'numeric'} placeholder = 'Nhập số điện thoại' placeholderTextColor = '#ffffff'/>
+                                    <TextInput onChangeText={(SDT) => setPhone(SDT)} style={{color: 'white', fontSize: 18}} keyboardType = {'numeric'} placeholder = 'Nhập số điện thoại' placeholderTextColor = '#ffffff'/>
                                 </View>
                             </View>
                             <View >
-                                <TouchableOpacity onPress={() => navigation.navigate('ScreenOTP')} style={{height: 50,width: '100%', backgroundColor: '#FF5F24', borderRadius: 30, justifyContent: 'center', alignItems: 'center'}}>  
+                                <TouchableOpacity onPress={SubmitLogin} style={{height: 50,width: '100%', backgroundColor: '#FF5F24', borderRadius: 30, justifyContent: 'center', alignItems: 'center'}}>  
                                     <Text style={{color: 'white',  fontSize: 20, fontWeight: 'bold'}}>OK</Text>
                                 </TouchableOpacity>
                             </View>

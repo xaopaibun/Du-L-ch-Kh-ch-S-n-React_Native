@@ -81,6 +81,8 @@ const reducer = (state = initState, action) => {
         case 'Sao':
             soluongsao = parseInt(action.soluongsao) + parseInt(state.soluongsao);
             return { ...state, soluongsao: soluongsao}
+        case 'SODIENTHOAI':
+            return { ...state, SDT: action.SDT}
         default:
             return state
     }

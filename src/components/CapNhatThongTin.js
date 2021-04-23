@@ -13,10 +13,12 @@ import {
   FlatList,
   KeyboardAvoidingView
 } from 'react-native';
+import { useDispatch , useSelector} from 'react-redux';
 const ScreenCapNhatThongTin = ({navigation}) =>{
     const [Focus, setFocus] = React.useState(false);
     const [Focus1, setFocus1] = React.useState(false);
     const [Focus2, setFocus2] = React.useState(false);
+    const SDT = useSelector(state => state.SDT)
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.Box}>
@@ -42,7 +44,8 @@ const ScreenCapNhatThongTin = ({navigation}) =>{
                      onFocus = {() => setFocus2(true)}
                      onBlur={() => setFocus2(false)}  
                     placeholder='Số điện thoại' 
-                    placeholderTextColor='#BDBDBD'/>
+                    placeholderTextColor='#BDBDBD' value = {SDT}/>
+                    
                 </View>
             </View>
             <View style={styles.Box}>

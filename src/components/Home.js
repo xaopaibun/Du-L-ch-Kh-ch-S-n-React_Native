@@ -167,7 +167,7 @@ const Home =  ({navigation}) => {
                         <Image source={require('../assets/images/flight.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Máy Bay</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
+                    <TouchableOpacity  onPress={() => navigation.navigate('ScreenCombo')} style={{width: 70, height: 60, margin: 5, justifyContent:'space-between', alignItems:'center'}}>
                         <Image source={require('../assets/images/combo.png')}  style={{width: 35, height: 35}} />
                         <Text style={{fontSize: 14, color:'#ffffff'}}>Combo</Text>
                     </TouchableOpacity>

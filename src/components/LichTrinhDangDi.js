@@ -11,6 +11,7 @@ import {
   View,
   TouchableOpacity,
   FlatList,
+  Platform
 } from 'react-native';
 import dulieu from '../Data/LichTrinhDangDi'
 import { useDispatch , useSelector} from 'react-redux';
@@ -45,10 +46,10 @@ const ScreenLichTrinhDangDi = ({navigation}) =>{
                                                                     <Text style={{color: 'white', fontSize: 10}}>{index+1}</Text>
                                                                 </View>
                                                                 {
-                                                                    index + 1 == val.thongtin.length ? <View/>: <View style={{height: '40%', width: 0, position: 'absolute', top: 26, left: 7, zIndex: 1, borderColor: '#C5C5C5', borderStyle: 'dashed', borderWidth: 1}}></View>
+                                                                    index + 1 == val.thongtin.length ? <View/>: <View style={{height: '70%', position: 'absolute', top: 26, left: 7, zIndex: 1, borderColor: '#C5C5C5', borderStyle: 'dashed', borderWidth: 1}}></View>
                                                                 }
                                                             </View>
-                                                            <View style={{flex: 9.3}}>
+                                                            <View style={{flex: 9.3, justifyContent: 'space-between'}}>
                                                                 <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                                                                     <Text style={{color: '#A0A0A0', flex: 8}}>{item.batdau}</Text>
                                                                     {item.sao ? <Text style={{flex: 2, textAlign:'right'}}>{item.sao} <Image source={require('../assets/images/sao3.png')}  style={{width: 15, height: 15}}/></Text>:<View/>}
@@ -69,6 +70,7 @@ const ScreenLichTrinhDangDi = ({navigation}) =>{
                 <TouchableOpacity  style={{height: 30,width: '100%', backgroundColor: 'rgba(255, 180, 152, 1)', borderRadius: 5, justifyContent: 'center', alignItems: 'center'}}>  
                     <Text style={{color: 'white'}}>Chúc mừng bạn đã hoàn thành chuyến đi !</Text>
                 </TouchableOpacity>
+                <View style={{height: 70}}/>
             </ScrollView>
             <View style={{height: 84, backgroundColor: 'white', padding: 16, justifyContent: 'space-between'}}>
                     <Text>Đã chi: <Text style={{color: '#FF5F24', fontWeight: '600'}}> 7,860,000 đ/ 2 người</Text></Text>

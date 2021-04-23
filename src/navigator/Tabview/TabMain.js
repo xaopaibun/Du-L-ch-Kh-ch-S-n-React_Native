@@ -8,6 +8,7 @@ import Tabheader from './tabheader';
 import ScreenLogin from '../../components/Login';
 import DanhGia from '../../components/DanhGia';
 import ScreenLichTrinhDangDi from '../../components/LichTrinhDangDi';
+import ThongBao from '../../components/ThongBao';
 const Tab = createBottomTabNavigator();
 const hello = () => {
     return null
