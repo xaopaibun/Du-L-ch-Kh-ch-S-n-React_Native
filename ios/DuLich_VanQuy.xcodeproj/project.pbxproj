@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7B928ADA1AAC1D6EE36EBD34 /* libPods-DuLich_VanQuy-DuLich_VanQuyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 104E0171D95CD1C8693650B0 /* libPods-DuLich_VanQuy-DuLich_VanQuyTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		84BA09782636A7570050ECEF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA09772636A7570050ECEF /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		4049C8BD9C37A3DF9FC0F824 /* Pods-DuLich_VanQuy-DuLich_VanQuyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuLich_VanQuy-DuLich_VanQuyTests.debug.xcconfig"; path = "Target Support Files/Pods-DuLich_VanQuy-DuLich_VanQuyTests/Pods-DuLich_VanQuy-DuLich_VanQuyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		67E0A07F5963E2CE6955FF2D /* Pods-DuLich_VanQuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuLich_VanQuy.release.xcconfig"; path = "Target Support Files/Pods-DuLich_VanQuy/Pods-DuLich_VanQuy.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DuLich_VanQuy/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84BA09762636A7560050ECEF /* DuLich_VanQuy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DuLich_VanQuy-Bridging-Header.h"; sourceTree = "<group>"; };
+		84BA09772636A7570050ECEF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8E274A869FFA79790AC11651 /* Pods-DuLich_VanQuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuLich_VanQuy.debug.xcconfig"; path = "Target Support Files/Pods-DuLich_VanQuy/Pods-DuLich_VanQuy.debug.xcconfig"; sourceTree = "<group>"; };
 		EB2283DD688DAF36CCAB71C9 /* libPods-DuLich_VanQuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DuLich_VanQuy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				84BA09772636A7570050ECEF /* File.swift */,
+				84BA09762636A7560050ECEF /* DuLich_VanQuy-Bridging-Header.h */,
 			);
 			name = DuLich_VanQuy;
 			sourceTree = "<group>";
@@ -145,7 +150,6 @@
 				4049C8BD9C37A3DF9FC0F824 /* Pods-DuLich_VanQuy-DuLich_VanQuyTests.debug.xcconfig */,
 				3ACBE5671D57984C19CB6829 /* Pods-DuLich_VanQuy-DuLich_VanQuyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -412,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				84BA09782636A7570050ECEF /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4049C8BD9C37A3DF9FC0F824 /* Pods-DuLich_VanQuy-DuLich_VanQuyTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3ACBE5671D57984C19CB6829 /* Pods-DuLich_VanQuy-DuLich_VanQuyTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = DuLich_VanQuyTests/Info.plist;
@@ -498,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DuLich_VanQuy;
+				SWIFT_OBJC_BRIDGING_HEADER = "DuLich_VanQuy-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = DuLich_VanQuy;
+				SWIFT_OBJC_BRIDGING_HEADER = "DuLich_VanQuy-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

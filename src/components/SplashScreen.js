@@ -35,7 +35,7 @@ const SplashScreen = () =>{
 }, []);
     return(
         <View style={{flex:1, backgroundColor: '#E5E5E5'}}>
-            <StatusBar barStyle='light-content'/>
+            <StatusBar barStyle='dark-content'/>
             <View style={{flex:0.5}}></View>
               <View style={{flex: 5.5, position:'relative'}}>
               <View style={{flex: 1.5,  justifyContent: 'space-around', alignItems: 'center', position: 'absolute', left: 0, right: 0, zIndex: 2}}>

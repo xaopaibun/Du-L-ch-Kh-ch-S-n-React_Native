@@ -1,13 +1,14 @@
 
 
-
+import { useNavigation } from '@react-navigation/native';
 import React, { useRef }from "react";
 import { View, StyleSheet, TouchableHighlight,TouchableOpacity, Animated,  Image,Text } from "react-native";
 
 import { useDispatch} from 'react-redux';
-const AddButton  = ({navigation}) => {
+const AddButton  = () => {
     // mode = new Animated.Value(0);
     // buttonSize = new Animated.Value(1);
+    const navigation = useNavigation();
     const mode  = useRef(new Animated.Value(0)).current;
     const [active, setactive] = React.useState(true);
     const buttonSize  = useRef(new Animated.Value(1)).current;
@@ -87,7 +88,7 @@ const AddButton  = ({navigation}) => {
         return (
             <View style={{ position: "absolute", alignItems: "center" }}>
                 <Animated.View style={{ position: "absolute", left: thermometerX, top: thermometerY }}>
-                    <TouchableOpacity style={{width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center'}} >
+                    <TouchableOpacity onPress={() => navigation.navigate('ScreenTaoLichTrinh')} style={{width: 80, height: 50, justifyContent: 'space-between', alignItems: 'center'}} >
                         <View style={styles.secondaryButton}>
                         <Text style={{color: 'white', fontSize: 16, fontWeight: '500'}}>+</Text>
                         </View>
@@ -95,7 +96,7 @@ const AddButton  = ({navigation}) => {
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={{ position: "absolute", left: timeX, top: timeY }}>
-                <TouchableOpacity style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
+                <TouchableOpacity onPress={() => navigation.navigate('DanhGia')} style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
                         <View style={styles.secondaryButton}>
                             <Image source={require('../../assets/images/butchi.png')}  style={{width: 12, height: 12}} />
                         </View>
@@ -103,7 +104,7 @@ const AddButton  = ({navigation}) => {
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={{ position: "absolute", left: timeX1, top: timeY1 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('DanhGia')} style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ScreenXemGoiY_')} style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
                         <View style={styles.secondaryButton}>
                             <Image source={require('../../assets/images/bongden.png')}  style={{width: 12, height: 12}} />
                         </View>
@@ -114,7 +115,7 @@ const AddButton  = ({navigation}) => {
                 </Animated.View>
                 <Animated.View style={{ position: "absolute", left: pulseX, top: pulseY }}>
                   
-                    <TouchableOpacity style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('ScreenTimKiem')} style={{width: 60, height: 50, justifyContent: 'space-between', alignItems: 'center'}}>
                         <View style={styles.secondaryButton}>
                             <Image source={require('../../assets/images/timkiem3.png')}  style={{width: 12, height: 12}} />
                         </View>
