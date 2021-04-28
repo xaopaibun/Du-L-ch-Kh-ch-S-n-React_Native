@@ -41,12 +41,16 @@ const ScreenKhuyenMai =  ({navigation}) => {
                 <TouchableOpacity onPress={() => navigation.goBack()} style={{flex:0.3}}><Image source={require('../assets/images/back.png')}  style={{width: 6, marginRight: 12}}/></TouchableOpacity>
                <View style={{flex:0.6}}><Text style={{fontSize: 14, fontWeight:'bold', color:'black'}}>Khuyến Mãi</Text></View>
             </View>
-            <FlatList
-                data = {Data_KhuyenMai}
-                keyExtractor={item => item.id}
-                renderItem={renderItemKhuyenMai}
-                style={{padding: 16, backgroundColor: '#E5E5E5'}}
-            /> 
+            <View style={{flex: 1,  backgroundColor: '#E5E5E5'}}>
+                <FlatList
+                    data = {Data_KhuyenMai}
+                    keyExtractor={item => item.id}
+                    renderItem={renderItemKhuyenMai}
+                    style={{padding: 16,marginBottom: 12}}
+                />
+            </View>
+    
+            
         </SafeAreaView>
     );
 }

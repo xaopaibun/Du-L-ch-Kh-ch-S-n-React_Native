@@ -18,6 +18,9 @@ import { useDispatch , useSelector} from 'react-redux';
 
 const ScreenLichTrinhDangDi = ({navigation}) =>{
     const dispatch = useDispatch();
+   var today = new Date();
+    const [Ngay, setNgay] = React.useState(today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear());
+    const [Gio, setGio] = React.useState(today.getHours() + ':' +today.getMinutes());
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
             <View style={{height:40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
@@ -26,14 +29,16 @@ const ScreenLichTrinhDangDi = ({navigation}) =>{
                 <View></View>
             </View>
             <ScrollView style={{backgroundColor: '#E5E5E5', padding: 16, flex: 1}}>
+                <Text>Hôm nay là ngày : {Ngay} {Gio}</Text>
                 {
-                    dulieu.map((val) =>{
+                    dulieu.map((val, index) =>{
                         return(
                             <View key = {val.id.toString()} style={{flex: 1}}>
-                                <Text style={{color: '#A0A0A0', fontSize: 12, fontWeight: '800'}}>{val.ngay}</Text>
+                                <Text style={{color: '#A0A0A0', fontSize: 12, fontWeight: '800'}}>Ngày {index+1} : {val.ngay}</Text>
                                 <View style={{flex: 1}}>
                                     {
                                         val.thongtin.map((item, index) =>{
+
                                             if(item.sao) {
                                                 dispatch({type: 'Sao', soluongsao : item.sao})
                                             }
@@ -42,7 +47,7 @@ const ScreenLichTrinhDangDi = ({navigation}) =>{
                                                         <Text style={{color: '#A0A0A0', fontSize: 12, paddingVertical: 5}}>{item.gio}</Text>
                                                         <View style={{flex: 0.7, flexDirection: 'row'}}>
                                                             <View style={{flex: 1}}>
-                                                                <View style={{height: 15, width: 15, backgroundColor: 'black', borderRadius: 50, justifyContent: 'center', alignItems: 'center'}}>
+                                                                <View style={{height: 15, width: 15, backgroundColor: val.ngay == Ngay && item.gio == Gio ? '#E83F00':"black", borderRadius: 50, justifyContent: 'center', alignItems: 'center'}}>
                                                                     <Text style={{color: 'white', fontSize: 10}}>{index+1}</Text>
                                                                 </View>
                                                                 {

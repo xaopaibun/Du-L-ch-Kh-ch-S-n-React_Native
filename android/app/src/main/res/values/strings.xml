@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DuLich_VanQuy</string>
     <string name="facebook_app_id">456503322104710</string>
+    <string name="server_client_id">186208920515-13fgibh9h3kb1vuansa7vd9ddcusbslf.apps.googleusercontent.com</string>
 </resources>

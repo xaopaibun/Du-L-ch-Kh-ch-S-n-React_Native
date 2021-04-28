@@ -8,10 +8,13 @@ import {
  Image,
  TextInput,
     ImageBackground,
+    Dimensions,
   View,
   TouchableOpacity,ActivityIndicator ,
   FlatList,
 } from 'react-native';
+import { scale , verticalScale} from "react-native-size-matters";
+import Draggable from 'react-native-draggable';
 import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch , useSelector} from 'react-redux';
 import DiaDiem from '../Data/DiaDiem';
@@ -21,7 +24,10 @@ import KS_RS from '../Data/KS_RS';
 import NhaHang from '../Data/NhaHang';
 import LichTrinh from '../Data/LichTrinh';
 import TraiNghiem from '../Data/TraiNghiem';
+
 const Home =  ({navigation}) => {
+    const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
   const [Data_LichTrinh, setData_LichTrinh] = React.useState();
   const [Data_DiaDiem, setData_DiaDiem] = React.useState();
   const [Data_DiaDiemTheoMua, setData_DiaDiemTheoMua] = React.useState();
@@ -287,8 +293,12 @@ const Home =  ({navigation}) => {
      } 
 
     </ScrollView>
-    <Image source={require('../assets/images/Frame7.png')}  style={{width: 89, height: 89, position: 'absolute', bottom: 10, right: 10, zIndex: 0.1}} />
+ 
+    <Draggable x={scale(300)}
+            y={verticalScale(600)} style={{ position: 'absolute', zIndex: 10}}><Image source={require('../assets/images/Frame7.png')}  style={{width: scale(89), height: scale(89)}} /></Draggable>
     </View>
+    
+    
   );
 };
 

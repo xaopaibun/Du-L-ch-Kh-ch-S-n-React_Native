@@ -59,7 +59,7 @@ const reducer = (state = initState, action) => {
         case 'ThanhPhoXuatPhat':
             return { ...state, ThanhPhoChon: action.ThanhPho}
         case 'ThanhPhoDen':
-            return { ...state, ThanhPhoChon: action.ThanhPho}
+            return { ...state, ThanhPhoChon2: action.ThanhPho}
         case 'NguoiThamGia':
             return { ...state, sum_NguoiThamGia: action.sum}
         case 'NganSach':
@@ -83,6 +83,10 @@ const reducer = (state = initState, action) => {
             return { ...state, soluongsao: soluongsao}
         case 'SODIENTHOAI':
             return { ...state, SDT: action.SDT}
+        case 'GUIKEY':
+            return { ...state, typetimkiem : action.value }
+        case 'GUIKEYSCREEN':
+            return { ...state, typescreen : action.value }
         default:
             return state
     }

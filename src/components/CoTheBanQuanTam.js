@@ -47,7 +47,7 @@ const ScreenCoTheBanQuanTam =  ({navigation}) => {
                 }
                 </View>
                 
-                <View style={{flex: 1, justifyContent:'flex-end', marginTop: 40}}>
+                <View style={{flex: 1, justifyContent:'flex-end',  marginVertical: 50}}>
                     <TouchableOpacity style={{backgroundColor: '#FF5F24', borderRadius: 5, height: 35,justifyContent:'center', alignItems:'center'}}>
                         <Text style={{color:'#FFFFFF', fontSize: 14, lineHeight: 17}}>Xong</Text>
                     </TouchableOpacity>

@@ -212,7 +212,7 @@ const ChiTietLichTrinh = ({navigation}) =>{
                             );
                     })
                 }
-                    <TouchableOpacity style={{marginVertical: 20, height: 25, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                    <TouchableOpacity style={{marginBottom: 60, marginTop: 20,  height: 25, borderColor: '#FFB59A', borderRadius: 5, borderStyle: 'dotted', borderWidth: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={require('../assets/images/plus-sign-in-circle1.png')}  style={{width: 13, height: 13}}/><Text style={{color: '#FF5F24', fontSize: 10}}>  Thêm điểm đi</Text>
                     </TouchableOpacity>
                 </ScrollView>

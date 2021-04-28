@@ -18,11 +18,12 @@ const ChiTietKM = ({navigation}) =>{
     const item= useSelector(state => state.chitietKM);
     
     return (
-        <View style={{flex: 1}}>
+        <ScrollView style={{flex: 1}}>
              <StatusBar barStyle='light-content'/>
-            <Image source={{uri : item.image}}  style={{height : 180,width: '100%', borderRadius: 5}}/>
+            <Image source={{uri : item.image}}  style={{height : 180,width: '100%'}}/>
             <TouchableOpacity onPress={() => navigation.goBack()} style={{position: 'absolute', top: 50, left: 10, zIndex: 9}}><Image source={require('../assets/images/back2.png')}  style={{width: 8, marginRight: 12}}/></TouchableOpacity>
             <View style={{ padding: 16, backgroundColor: '#E5E5E5', flex: 1}}>
+               
                 <Text style={{lineHeight: 25}}>
 
                 <Text style={{fontWeight: '600'}}>Điều kiện áp dụng:</Text>{'\n'}
@@ -51,8 +52,9 @@ const ChiTietKM = ({navigation}) =>{
                 3. Nhập mã <Text style={{fontWeight: '600', color: '#FF5F24'}}>MEGA</Text> vào ô <Text style={{fontWeight: '600'}}>"NHẬP MÃ KHUYẾN MÃI" </Text> ở bước  <Text style={{fontWeight: '600'}}>"Thanh Toán" </Text>.{'\n'}
                 </Text>
                 <TouchableOpacity style={{alignItems: 'center'}}><Text style={{fontSize: 16, color: '#FF5F24', fontWeight: 'bold'}}>Đặt Ngay</Text></TouchableOpacity>
+                
             </View>
-        </View>
+        </ScrollView>
     );
 }
 export default ChiTietKM ;

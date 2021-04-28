@@ -1,7 +1,7 @@
 const dulieu = [
     {
         "id" : "1",
-        "ngay" : "Ngày 1: 25/12/2019",
+        "ngay" : "28/04/2021",
        "thongtin" :[
            {
                 "gio" : "6:30",
@@ -50,7 +50,7 @@ const dulieu = [
     },
     {
         "id" : "2",
-        "ngay" : "Ngày 2: 26/12/2019",
+        "ngay" : "29/04/2021",
        "thongtin" :[
            {
                 "gio" : "6:30",
@@ -100,7 +100,7 @@ const dulieu = [
     },
     {
         "id" : "3",
-        "ngay" : "Ngày 3: 27/12/2019",
+        "ngay" : "30/04/2021",
        "thongtin" :[
            {
                 "gio" : "6:30",

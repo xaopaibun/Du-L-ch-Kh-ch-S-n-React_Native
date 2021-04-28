@@ -48,7 +48,7 @@ const CalendarPicker_Custom = () =>{
         }
     }
     return(
-        <View style={{backgroundColor: 'white', borderRadius: 10, marginHorizontal: 16}}>
+        <View style={{backgroundColor: 'white', borderRadius: 10, marginHorizontal: 16, paddingVertical: 10}}>
             <CalendarPicker 
                 previousTitle='<'
                 nextTitle='>'
@@ -61,6 +61,13 @@ const CalendarPicker_Custom = () =>{
                 // todayTextStyle={{
                 //     color: '#BE52F2',
                 // }}
+                dayLabelsWrapper={{
+                    borderTopWidth: 0,
+                    borderBottomWidth: 0,
+                    borderStyle: 'solid',
+                    borderRadius: 1,
+                    color: 'green'
+                }}
                 todayTextStyle='#F8530D'
                 customDatesStyles={customDatesStylesCallback}
                 customDayHeaderStyles={customDayHeaderStylesCallback}

@@ -14,19 +14,30 @@ import {
 } from 'react-native';
 import { Modal } from 'react-native-paper';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import CalendarPicker_Custom from './CalendarPicker_Custom';
 const ScreenTaoLichTrinh =  ({navigation}) => {
     const [visible, setVisible] = React.useState(false);
-
+    const dispatch = useDispatch();
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
     //const Data_LichTrinh = useSelector(state => state.data_diadiem);
     const XuatPhat = useSelector(state => state.ThanhPhoChon);
+    const DiemDen = useSelector(state => state.ThanhPhoChon2);
     //const DiemDen = useSelector(state => state.DiemDen);
     const [isEnabled, setIsEnabled] = React.useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const sum_NguoiThamGia = useSelector(state => state.sum_NguoiThamGia)
+    const onFocusXuatPhat = () =>{
+        dispatch({type : 'GUIKEY' , value : 'xuatphat'});
+        dispatch({type : 'GUIKEYSCREEN' , value : 'taolichtrinh'});
+        navigation.navigate('ScreenTimKiem');
+    }
+    const onFocusDiemDen = () =>{
+        dispatch({type : 'GUIKEY' , value : 'diemden'});
+        dispatch({type : 'GUIKEYSCREEN' , value : 'taolichtrinh'});
+        navigation.navigate('ScreenTimKiem');
+    }
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
             <StatusBar barStyle='dark-content'/>
@@ -39,11 +50,11 @@ const ScreenTaoLichTrinh =  ({navigation}) => {
                 <View style={{flex: 9}}>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/pin1.png')}  style={{width: 20, height: 20}}/></View>
-                        <TextInput onFocus={() => navigation.navigate('ScreenTimKiem')} placeholder = "Xuất phát" value={XuatPhat} placeholderTextColor='#989898' style={{padding: 10, flex: 9}}/>
+                        <TextInput onFocus={onFocusXuatPhat} placeholder = "Xuất phát" value={XuatPhat} placeholderTextColor='#989898' style={{padding: 10, flex: 9}}/>
                     </View>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/placeholders1.png')}  style={{width: 20, height: 20}}/></View>
-                        <TextInput onFocus={() => navigation.navigate('ScreenTimKiem')} placeholder = "Điểm đến"  placeholderTextColor='#989898' value={XuatPhat}  style={{padding: 10, flex: 9}}/>
+                        <TextInput onFocus={onFocusDiemDen} placeholder = "Điểm đến"  placeholderTextColor='#989898' value={DiemDen}  style={{padding: 10, flex: 9}}/>
                     </View>
                     <View style={{borderBottomWidth: 0.5, marginVertical: 8, borderColor:'#000000', height: 40, flexDirection: 'row',alignItems:'center'}}>
                         <View style={{flex: 1, justifyContent: 'center'}}><Image source={require('../assets/images/calendar1.png')}  style={{width: 20, height: 20}}/></View>

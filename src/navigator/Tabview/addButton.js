@@ -93,6 +93,8 @@ const AddButton  = () => {
                         <Text style={{color: 'white', fontSize: 16, fontWeight: '500'}}>+</Text>
                         </View>
                         <Text style={{color: 'white', fontSize: 12, position: 'absolute', bottom : -20, left: 0, zIndex: 2, textAlign: 'center'}}>Tạo lịch trình</Text>
+       
+       
                     </TouchableOpacity>
                 </Animated.View>
                 <Animated.View style={{ position: "absolute", left: timeX, top: timeY }}>
