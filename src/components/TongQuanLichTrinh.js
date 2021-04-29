@@ -174,7 +174,7 @@ const ScreenTongQuanLichTrinh = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </ScrollView>
-        <View style={{ padding: 16, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+        <View style={{ padding: 16, backgroundColor: 'white', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <Text style={{ color: '#FF5F24', fontSize: 16, fontWeight: 'bold' }}>2,600,000 đ/ người</Text>
           <TouchableOpacity onPress={() => navigation.navigate('ChiTietLichTrinh')} style={{ height: 25, width: 71, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FF5F24', borderRadius: 5 }}>
             <Text style={{ color: 'white', fontWeight: '500', fontSize: 12 }}>Đặt ngay</Text>

@@ -19,15 +19,17 @@ const Profile = ({navigation}) =>{
   const Data = useSelector(state => state.data_diadiemphobien);
     const dispatch = useDispatch();
     const renderItemDiaDiem = ({ item }) => (
-      <TouchableOpacity  onPress={() =>{
-          dispatch({type : 'ChiTietDiaDiem', data: item})
-          navigation.navigate('ScreenCTDiaDiem');
-      }} style={{width: 150, height: 200, marginRight: 16,  borderRadius: 5, overflow: 'hidden'}}>
-              <Image source={{uri : item.image}} style={{width: 150, height: 200}}/>
-              <LinearGradient colors={['rgba(77, 77, 77, 0)','#000000']} style={{position: 'absolute', bottom: 0, zIndex: 1, height: 20, width:'100%'}}>
-                  <Text style={{ color:'white', fontSize: 13, fontWeight: '600', backgroundColor:'black',  textAlign:'center'}}>{item.TenDiaDiem}</Text>
-              </LinearGradient>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+            dispatch({ type: 'ChiTietDiaDiem', data: item })
+            navigation.navigate('ScreenCTDiaDiem');
+        }} style={{ width: 150, height: 200, marginRight: 16, borderRadius: 5, overflow: 'hidden' }}>
+            <ImageBackground source={{ uri: item.image }} style={{ width: 150, height: 200 }} > 
+                <Image source={require('../assets/images/abc.png')} style={{ width: 150, height: 200 }} />
+                <View style={{ position: 'absolute', bottom: 0, zIndex: 1, height: 20, width: '100%' }}>
+                    <Text style={{ color: 'white', fontSize: 13, fontWeight: '600', textAlign: 'center' }}>{item.TenDiaDiem}</Text>
+                </View>
+            </ImageBackground>
+        </TouchableOpacity>
     );
     return(
         <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
@@ -76,8 +78,8 @@ const Profile = ({navigation}) =>{
           <View style={{height: 20, marginHorizontal: 16,marginVertical: 10}}>
               <Text style={{color: '#000000', fontWeight: 'bold'}}>Xem ảnh</Text>
           </View>
-          <View style={{height: 160,paddingHorizontal: 16, borderRadius:5, overflow:'hidden'}}>
-                  <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
+          <View style={{height: 160,paddingHorizontal: 16}}>
+                  <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between', borderRadius:5, overflow:'hidden'}}>
                       <View style={{flex: 4}}><Image source={{uri : 'https://cungphuot.info/wp-content/uploads/2016/07/kinh-nghiem-du-lich-trang-an.jpg'}}  style={{width: '100%', height: '100%'}}/></View>
                       <View style={{flex: 6, marginLeft: 6, justifyContent: 'space-between'}}>
                           <View style={{flex: 1, marginBottom: 6}}><Image source={{uri : 'https://anh.eva.vn/upload/1-2017/images/2017-03-11/1-1489215422-width500height329.jpg'}} style={{width: '100%', height: '100%'}}/></View>

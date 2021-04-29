@@ -181,7 +181,7 @@ const ScreenXemGoiY_ = ({ navigation }) => {
                                 dispatch({ type: 'GUIKEY', value: 'xuatphat' });
                                 dispatch({ type: 'GUIKEYSCREEN', value: 'xemgoiy' });
                                 navigation.navigate('ScreenTimKiem');
-                            }} placeholder="Xuất phát" value={XuatPhat} placeholderTextColor='#989898' style={{ padding: 10, flex: 9 ,  color: '#989898'}} />
+                            }} placeholder="Xuất phát" value={XuatPhat} placeholderTextColor='#989898' style={{ padding: 10, flex: 9, color: '#989898' }} />
                         </View>
                         <View style={{ borderBottomWidth: 0.5, marginVertical: 8, borderColor: '#000000', height: 40, flexDirection: 'row', alignItems: 'center' }}>
                             <View style={{ flex: 1, justifyContent: 'center' }}><Image source={require('../assets/images/placeholders1.png')} style={{ width: 20, height: 20 }} /></View>

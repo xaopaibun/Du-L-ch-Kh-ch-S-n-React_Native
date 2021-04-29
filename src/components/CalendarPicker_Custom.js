@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  StatusBar,
-  Text,
-  Image,
-  View,
-  TouchableOpacity,
+    SafeAreaView,
+    StatusBar,
+    Text,
+    Image,
+    View,
+    TouchableOpacity,
 } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
-const CalendarPicker_Custom = () =>{
+const CalendarPicker_Custom = () => {
     const customDayHeaderStylesCallback = ({ dayOfWeek, month, year }) => {
         switch (dayOfWeek) { // can also evaluate month, year
             case 1:
@@ -47,9 +47,9 @@ const CalendarPicker_Custom = () =>{
                 };
         }
     }
-    return(
-        <View style={{backgroundColor: 'white', borderRadius: 10, marginHorizontal: 16, paddingVertical: 10}}>
-            <CalendarPicker 
+    return (
+        <View style={{ backgroundColor: 'white', borderRadius: 10, marginHorizontal: 16, paddingVertical: 10 }}>
+            <CalendarPicker
                 previousTitle='<'
                 nextTitle='>'
                 customDatesStyles='YYYY-MM'
@@ -71,15 +71,15 @@ const CalendarPicker_Custom = () =>{
                 todayTextStyle='#F8530D'
                 customDatesStyles={customDatesStylesCallback}
                 customDayHeaderStyles={customDayHeaderStylesCallback}
-                weekdays={['Th 2','Th 3','Th 4','Th 5','Th 6','Th 7','CN']}
+                weekdays={['Th 2', 'Th 3', 'Th 4', 'Th 5', 'Th 6', 'Th 7', 'CN']}
                 months={['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']}
-                />
-                <View style={{height: 20, margin: 16, justifyContent: 'center', alignItems: 'flex-end'}}>
-                    <TouchableOpacity >
-                        <  Text style={{color: '#FF5F24', fontSize: 14, fontWeight: 'bold'}}>OK</Text>
-                    </TouchableOpacity>
-                </View>
+            />
+            <View style={{ height: 20, margin: 16, justifyContent: 'center', alignItems: 'flex-end' }}>
+                <TouchableOpacity >
+                    <  Text style={{ color: '#FF5F24', fontSize: 14, fontWeight: 'bold' }}>OK</Text>
+                </TouchableOpacity>
             </View>
+        </View>
     );
 }
 export default CalendarPicker_Custom;

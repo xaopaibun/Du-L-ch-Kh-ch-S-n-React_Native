@@ -25,7 +25,7 @@ const ScreenLT =  ({navigation}) => {
         
     }, []);
     const renderItemLichTrinh = ({ item }) => (
-        <View style={{height: 300,  backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 20}}>
+        <TouchableOpacity  onPress={() => navigation.navigate('ScreenLichTrinhDangDi')}style={{height: 300,  backgroundColor:'#ffffff', borderRadius: 5, overflow:'hidden', marginBottom: 20}}>
         <View style={{flexDirection: 'row', flex: 1, justifyContent:'space-between'}}>
             <View style={{flex: 4}}><Image source={{uri : item.images[0]}}  style={{width: '100%', height: '100%'}}/></View>
             <View style={{flex: 6, marginLeft: 6, justifyContent: 'space-between'}}>
@@ -66,7 +66,7 @@ const ScreenLT =  ({navigation}) => {
                 <TouchableOpacity><Image source={require('../assets/images/tim.png')}  style={{width: 14,height: 12 }}/></TouchableOpacity>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
       );
     return(
         <View style={{flex: 1, backgroundColor: '#ffffff'}}>

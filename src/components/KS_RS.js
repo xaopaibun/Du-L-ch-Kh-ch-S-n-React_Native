@@ -66,7 +66,8 @@ const ScreenKS_RS =  ({navigation}) => {
                 keyExtractor={item => item.id}
                 renderItem={renderItemKS_RS}
                 style={{padding: 16, backgroundColor: '#E5E5E5'}}
-            /> 
+            />
+            
         </SafeAreaView>
     );
 }

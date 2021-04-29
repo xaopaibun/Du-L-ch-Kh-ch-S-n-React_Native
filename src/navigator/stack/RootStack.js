@@ -31,6 +31,7 @@ import ScreenLogin from '../../components/Login';
 import ScreenOTP from '../../components/OTP';
 import ScreenCapNhatThongTin from '../../components/CapNhatThongTin';
 import SuaThongTinCaNhan from '../../components/Suathongtincanhan';
+import ScreenLichTrinhDangDi from '../../components/LichTrinhDangDi';
 import ScreenTongQuanLichTrinh from '../../components/TongQuanLichTrinh';
 import Profile from '../../components/Profile';
 import NguoiTheoDoi from '../../components/NguoiTheoDoi';
@@ -42,7 +43,7 @@ import ScreenKQGoiY from '../../components/KQGoiY';
 import ScreenChiTietKhamPha from '../../components/ChiTietKhamPha';
 import DanhGia from '../../components/DanhGia';
 import ScreenCombo from '../../components/Combo';
-export default function RootStack({navigation}) {
+export default function RootStack({ navigation }) {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" >
@@ -84,6 +85,7 @@ export default function RootStack({navigation}) {
         <Stack.Screen name="ScreenChiTietKhamPha" component={ScreenChiTietKhamPha} />
         <Stack.Screen name="DanhGia" component={DanhGia} />
         <Stack.Screen name="ScreenCombo" component={ScreenCombo} />
+        <Stack.Screen name="ScreenLichTrinhDangDi" component={ScreenLichTrinhDangDi} />
       </Stack.Navigator>
     </NavigationContainer>
   );
