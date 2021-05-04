@@ -31,7 +31,7 @@ const ScreenThongTinCaNhan = ({ navigation }) => {
             </View>
             <View style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={{ marginTop: 20, height: 80, paddingHorizontal: 16, flexDirection: 'row', alignItems: 'center', backgroundColor: 'white' }}>
-                    <Image source={{ uri: 'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=WEV97IplNlgAX8XPpG-&_nc_ht=scontent.fhan3-1.fna&oh=f22b691c0fe1895e745ae77dc67c89a6&oe=608A53D7' }} style={{ width: 60, height: 60, borderRadius: 50 }} />
+                    <Image source={{ uri: 'https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-1/p200x200/181485075_288532339403436_5571309197348013484_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=7206a8&_nc_ohc=yRFUARG4vPwAX_2kD6A&_nc_ht=scontent-hkg4-2.xx&tp=6&oh=9249d8c824d1fec57712f0f0fc1eac88&oe=60B75293' }} style={{ width: 60, height: 60, borderRadius: 50 }} />
                     <Text style={{ marginLeft: 10, fontSize: 15, fontWeight: '500' }}>Phạm Jin</Text>
                 </TouchableOpacity>
                 <View style={{ marginTop: 35, height: 'auto', backgroundColor: '#ffffff', padding: 16 }}>

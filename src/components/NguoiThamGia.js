@@ -22,10 +22,6 @@ const ScreenNguoiThamGia = ({ navigation }) => {
         dispatch({ type: 'NguoiThamGia', sum: sum });
         navigation.goBack();
     }
-    //const Data_LichTrinh = useSelector(state => state.data_diadiem);
-    const XuatPhat = useSelector(state => state.ThanhPhoChon);
-    const [isEnabled, setIsEnabled] = React.useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     const [nguoithamgia, setnguoithamgia] = React.useState([0, 0, 0]);
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#ffffff' }}>
@@ -42,7 +38,7 @@ const ScreenNguoiThamGia = ({ navigation }) => {
                             <Text style={{ color: '#090909' }}>Người lớn <Text style={{ color: '#9A9A9A' }}>(trên 12 tuổi)</Text></Text>
                         </View>
                         <View style={{ flex: 2.5, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                            <TouchableOpacity onPress={() => setnguoithamgia([nguoithamgia[0] - 1, nguoithamgia[1], nguoithamgia[2]])}>
+                            <TouchableOpacity onPress={() => nguoithamgia[0] > 0 ? setnguoithamgia([nguoithamgia[0] - 1, nguoithamgia[1], nguoithamgia[2]]) : 0}>
                                 <Image source={require('../assets/images/plus-sign-in-circle2.png')} style={{ width: 15 }} />
                             </TouchableOpacity>
                             <Text style={{ fontWeight: '400' }}>{nguoithamgia[0]}</Text>
@@ -57,7 +53,7 @@ const ScreenNguoiThamGia = ({ navigation }) => {
                             <Text style={{ color: '#090909' }}>Trẻ em <Text style={{ color: '#9A9A9A' }}>(2-11 tuổi)</Text></Text>
                         </View>
                         <View style={{ flex: 2.5, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                            <TouchableOpacity onPress={() => setnguoithamgia([nguoithamgia[0], nguoithamgia[1] - 1, nguoithamgia[2]])}>
+                            <TouchableOpacity onPress={() => nguoithamgia[0] > 0 ?  setnguoithamgia([nguoithamgia[0], nguoithamgia[1] - 1, nguoithamgia[2]]) : 0}>
                                 <Image source={require('../assets/images/plus-sign-in-circle2.png')} style={{ width: 15 }} />
                             </TouchableOpacity >
                             <Text style={{ fontWeight: '400' }}>{nguoithamgia[1]}</Text>
@@ -71,7 +67,7 @@ const ScreenNguoiThamGia = ({ navigation }) => {
                             <Text style={{ color: '#090909' }}>Em bé <Text style={{ color: '#9A9A9A' }}>(dưới 2 tuổi) </Text></Text>
                         </View>
                         <View style={{ flex: 2.5, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
-                            <TouchableOpacity onPress={() => setnguoithamgia([nguoithamgia[0], nguoithamgia[1], nguoithamgia[2] - 1])}>
+                            <TouchableOpacity onPress={() => nguoithamgia[0] > 0 ?  setnguoithamgia([nguoithamgia[0], nguoithamgia[1], nguoithamgia[2] - 1]) : 0}>
                                 <Image source={require('../assets/images/plus-sign-in-circle2.png')} style={{ width: 15 }} />
                             </TouchableOpacity>
                             <Text style={{ fontWeight: '400' }}>{nguoithamgia[2]}</Text>

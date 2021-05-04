@@ -12,7 +12,7 @@ import {
     TouchableOpacity,
     FlatList,
 } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
@@ -20,9 +20,12 @@ import { useSelector } from 'react-redux';
 const ScreenChiTietKhachSan = ({ navigation }) => {
     const Data = useSelector(state => state.chitietKhachSan);
     const Data_KhachSan = useSelector(state => state.data_KS_RS);
-
+    const dispatch = useDispatch();
     const renderItem = ({ item }) => (
-        <View style={{ height: 250, width: 160, marginRight: 16, justifyContent: 'space-between' }}>
+        <TouchableOpacity  onPress={() => {
+            dispatch({ type: 'ChiTietKhachSan', data: item });
+            navigation.navigate('ScreenChiTietKhachSan');
+        }} style={{ height: 250, width: 160, marginRight: 16, justifyContent: 'space-between' }}>
             <View style={{ flex: 3 }}>
                 <Image source={{ uri: item.images[0] }} style={{ width: 160, height: 150, borderRadius: 5 }} />
             </View>
@@ -41,7 +44,7 @@ const ScreenChiTietKhachSan = ({ navigation }) => {
                 <Text style={{ color: '#3076FE', fontSize: 10 }}><Image source={require('../assets/images/Vector.png')} style={{ width: 7, height: 10 }} /> {item.DiaChi}</Text>
                 <Text style={{ fontWeight: '500', fontSize: 12, color: '#FF2424' }}>{item.Gia}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 
     return (
@@ -96,8 +99,7 @@ const ScreenChiTietKhachSan = ({ navigation }) => {
             <View style={{ height: 30, marginHorizontal: 16, justifyContent: 'space-between', flexDirection: 'row', marginTop: 20 }}>
                 <Text style={{ color: '#000000', fontWeight: 'bold' }}>Khách Sạn Lân Cận</Text>
                 <TouchableOpacity onPress={() => {
-
-                    navigation.navigate('ScreenTraiNghiem');
+                    navigation.navigate('ScreenKS_RS');
                 }}><Text style={{ color: '#9E9E9E', fontSize: 12 }}>Xem thêm  <Image source={require('../assets/images/Right.png')} style={{ width: 3, height: 7 }} /></Text></TouchableOpacity>
             </View>
             <FlatList
@@ -107,6 +109,8 @@ const ScreenChiTietKhachSan = ({ navigation }) => {
                 horizontal
                 style={{ marginLeft: 16 }}
             />
+
+            <View style={{height: 30}}/>
         </ScrollView>
     );
 }

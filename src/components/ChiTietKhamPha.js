@@ -16,19 +16,23 @@ import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ScreenChiTietKhamPha = ({ navigation }) => {
+    const dispatch = useDispatch();
     const Data = useSelector(state => state.data_diadiemphobien);
+    
     const renderItemDiaDiem = ({ item }) => (
         <TouchableOpacity onPress={() => {
             dispatch({ type: 'ChiTietDiaDiem', data: item })
             navigation.navigate('ScreenCTDiaDiem');
         }} style={{ width: 150, height: 200, marginRight: 16, borderRadius: 5, overflow: 'hidden' }}>
-            <Image source={{ uri: item.image }} style={{ width: 150, height: 200 }} />
-            <LinearGradient colors={['rgba(77, 77, 77, 0)', '#000000']} style={{ position: 'absolute', bottom: 0, zIndex: 1, height: 20, width: '100%' }}>
-                <Text style={{ color: 'white', fontSize: 13, fontWeight: '600', backgroundColor: 'black', textAlign: 'center' }}>{item.TenDiaDiem}</Text>
-            </LinearGradient>
+            <ImageBackground source={{ uri: item.image }} style={{ width: 150, height: 200 }} > 
+                <Image source={require('../assets/images/abc.png')} style={{ width: 150, height: 200 }} />
+                <View style={{ position: 'absolute', bottom: 0, zIndex: 1, height: 20, width: '100%' }}>
+                    <Text style={{ color: 'white', fontSize: 13, fontWeight: '600', textAlign: 'center' }}>{item.TenDiaDiem}</Text>
+                </View>
+            </ImageBackground>
         </TouchableOpacity>
     );
-
+    
     return (
         <ScrollView style={{ flex: 1, backgroundColor: '#ffffff' }}>
             <StatusBar barStyle='light-content' />

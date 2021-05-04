@@ -24,7 +24,8 @@ const initState = {
     NganSach:[
         '1.000.000 - 2.000.000 đ', '3.000.000 - 5.000.000 đ'
     ],
-    soluongsao: 0
+    soluongsao: 0,
+    active_CalendarPicker: false
 };
 const reducer = (state = initState, action) => {
     switch (action.type) {
@@ -87,6 +88,8 @@ const reducer = (state = initState, action) => {
             return { ...state, typetimkiem : action.value }
         case 'GUIKEYSCREEN':
             return { ...state, typescreen : action.value }
+        case 'active_CalendarPicker':
+            return { ...state, active_CalendarPicker : action.active }
         default:
             return state
     }

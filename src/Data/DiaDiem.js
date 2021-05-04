@@ -27,9 +27,15 @@ let DiaDiem = [
     },
     {
         "id": "5",
-        "image": "https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/06_2019/khu-du-lich-na-hang-2.jpg",
+        "image": "https://www.vietnambooking.com/wp-content/uploads/2020/08/na-hang-1.jpg",
         "TenDiaDiem": "La Hang, Tuyen Quang",
         "ND": "Cùng Phượt – Na Hang là một huyện vùng cao của Tuyên Quang, có tiềm năng lớn cho ngành kinh tế du lịch phát triển. Du lịch Na Hang các bạn còn được hòa mình vào các lễ hội độc đáo, mang đậm bản sắc văn hóa dân tộc của địa phương."
+    },
+    {
+        "id": "6",
+        "image": "https://halotravel.vn/wp-content/uploads/2019/12/ha-noi-nui-tram-o-chuong-my-1.jpg",
+        "TenDiaDiem": "Núi Trầm, Hà Nội",
+        "ND": "Núi Trầm Chương Mỹ sở hữu vẻ đẹp hoang sơ, quyến rũ với điểm nhấn là những con đường mòn mềm mại uốn cong trải dọc sườn núi. Những mỏm đá trắng bào mấp mô trên đỉnh núi mang đậm dấu ấn của thời gian, có lẽ vì thế mà núi Trầm được mệnh danh là 'cao nguyên đá Hà Giang thu nhỏ'."
     },
 
 ];

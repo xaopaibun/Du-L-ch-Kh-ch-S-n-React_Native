@@ -8,7 +8,9 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
+import { useDispatch } from 'react-redux';
 const CalendarPicker_Custom = () => {
+    const dispatch = useDispatch();
     const customDayHeaderStylesCallback = ({ dayOfWeek, month, year }) => {
         switch (dayOfWeek) { // can also evaluate month, year
             case 1:
@@ -75,8 +77,8 @@ const CalendarPicker_Custom = () => {
                 months={['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']}
             />
             <View style={{ height: 20, margin: 16, justifyContent: 'center', alignItems: 'flex-end' }}>
-                <TouchableOpacity >
-                    <  Text style={{ color: '#FF5F24', fontSize: 14, fontWeight: 'bold' }}>OK</Text>
+                <TouchableOpacity onPress={() => dispatch({type :'active_CalendarPicker', active : false})}>
+                    <Text style={{ color: '#FF5F24', fontSize: 14, fontWeight: 'bold' }}>OK</Text>
                 </TouchableOpacity>
             </View>
         </View>

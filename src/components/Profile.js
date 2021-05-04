@@ -41,7 +41,7 @@ const Profile = ({navigation}) =>{
             <ScrollView style={{flex: 1, backgroundColor:'#F8F8F8'}}>
                 <View style={{height: 100, width: '100%', flexDirection: 'row'}}>
                   <View style={{flex: 3, justifyContent: 'space-around', alignItems: 'center'}}>
-                        <Image source={{uri :'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=WEV97IplNlgAX8XPpG-&_nc_ht=scontent.fhan3-1.fna&oh=f22b691c0fe1895e745ae77dc67c89a6&oe=608A53D7'}}  style={{width: 65, height: 65, borderRadius: 50}} />
+                        <Image source={{uri :'https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-1/p200x200/181485075_288532339403436_5571309197348013484_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=7206a8&_nc_ohc=yRFUARG4vPwAX_2kD6A&_nc_ht=scontent-hkg4-2.xx&tp=6&oh=9249d8c824d1fec57712f0f0fc1eac88&oe=60B75293'}}  style={{width: 65, height: 65, borderRadius: 50}} />
                         <Text style={{fontSize: 15, fontWeight: '500'}}>Phạm Jin</Text>
                   </View>
                   <View style={{flex: 7, paddingRight: 16}}>

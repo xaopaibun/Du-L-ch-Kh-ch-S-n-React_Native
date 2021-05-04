@@ -10,7 +10,7 @@ let LichTrinh = [
         "TenDiaDiem": "Đà Lạt, Lâm Đồng",
         "ThoiGian": "5 ngày",
         "Gia": "5,200,000",
-        "avatar": "https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=Q8STLP3EX7wAX-Pp_Na&_nc_ht=scontent.fhan3-1.fna&oh=25dd328ae7d78aa0d4dbe6d93332aa3d&oe=60923CD7",
+        "avatar": "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-1/p200x200/181485075_288532339403436_5571309197348013484_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=7206a8&_nc_ohc=yRFUARG4vPwAX_2kD6A&_nc_ht=scontent-hkg4-2.xx&tp=6&oh=9249d8c824d1fec57712f0f0fc1eac88&oe=60B75293",
         "TenFB": "Phạm Jin",
         "Time": "10 giờ trước",
     },

@@ -17,16 +17,23 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { useDispatch, useSelector } from 'react-redux';
 // const Loai = ['Lịch trình', 'Máy bay', 'Khách sạn', 'Tham quan'];
+
 const ScreenTongQuanLichTrinh = ({ navigation }) => {
+  const dispatch = useDispatch();
   const Data = useSelector(state => state.data_diadiemphobien);
   const renderItemDiaDiem = ({ item }) => (
-    <TouchableOpacity style={{ width: 150, height: 200, marginRight: 16, borderRadius: 5, overflow: 'hidden' }}>
-      <Image source={{ uri: item.image }} style={{ width: 150, height: 200 }} />
-      <LinearGradient colors={['rgba(77, 77, 77, 0)', '#000000']} style={{ position: 'absolute', bottom: 0, zIndex: 1, height: 20, width: '100%' }}>
-        <Text style={{ color: 'white', fontSize: 13, fontWeight: '600', backgroundColor: 'black' }}>{item.TenDiaDiem}</Text>
-      </LinearGradient>
+    <TouchableOpacity onPress={() => {
+        dispatch({ type: 'ChiTietDiaDiem', data: item })
+        navigation.navigate('ScreenCTDiaDiem');
+    }} style={{ width: 150, height: 200, marginRight: 16, borderRadius: 5, overflow: 'hidden' }}>
+        <ImageBackground source={{ uri: item.image }} style={{ width: 150, height: 200 }} > 
+            <Image source={require('../assets/images/abc.png')} style={{ width: 150, height: 200 }} />
+            <View style={{ position: 'absolute', bottom: 0, zIndex: 1, height: 20, width: '100%' }}>
+                <Text style={{ color: 'white', fontSize: 13, fontWeight: '600', textAlign: 'center' }}>{item.TenDiaDiem}</Text>
+            </View>
+        </ImageBackground>
     </TouchableOpacity>
-  );
+);
   const LichTrinh = () => {
     return (
       <View style={{ backgroundColor: '#E5E5E5' }}>
@@ -118,7 +125,7 @@ const ScreenTongQuanLichTrinh = ({ navigation }) => {
     return (
       <View style={{ flex: 1, backgroundColor: '#E5E5E5' }}>
         <ScrollView style={{ flex: 1, padding: 16 }}>
-          <View style={{ alignItems: 'center', justifyContent: 'space-around', flex: 0.5 }}>
+          <View style={{ alignItems: 'center', justifyContent: 'space-around', height: 230}}>
             <Text>Hà Nội - Quy Nhơn</Text>
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Text>HAN</Text>
@@ -138,7 +145,7 @@ const ScreenTongQuanLichTrinh = ({ navigation }) => {
             <View style={{ width: 165, height: 1, backgroundColor: 'black' }}></View>
           </View>
 
-          <View style={{ alignItems: 'center', justifyContent: 'space-around', flex: 0.5 }}>
+          <View style={{ alignItems: 'center', justifyContent: 'space-around', height: 230}}>
             <Text>Quy Nhơn - Hà Nội</Text>
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Text>UIH</Text>
@@ -166,7 +173,7 @@ const ScreenTongQuanLichTrinh = ({ navigation }) => {
               },
               shadowOpacity: 0.30,
               shadowRadius: 4.65,
-              marginVertical: 18,
+              marginVertical: 25,
               elevation: 8, justifyContent: 'center', alignItems: 'center', height: 25, backgroundColor: '#FFFFFF', borderRadius: 5, flexDirection: 'row'
             }}>
               <Image source={require('../assets/images/timkiem2.png')} style={{ width: 12, height: 12, marginRight: 5 }} />
@@ -225,7 +232,7 @@ const ScreenTongQuanLichTrinh = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()} ><Image source={require('../assets/images/back2.png')} style={{ marginTop: 50, marginLeft: 20, width: 7, height: 12 }} /></TouchableOpacity>
       </ImageBackground>
       <View style={{ height: 90, justifyContent: 'center', alignItems: 'center', marginTop: -30, justifyContent: 'space-around' }}>
-        <Image source={{ uri: 'https://scontent.fhan3-1.fna.fbcdn.net/v/t1.6435-9/156598791_2203273959820668_1209852453979302780_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=7mR09h9zVWcAX_rv-6N&_nc_ht=scontent.fhan3-1.fna&oh=2b612c4b76f8ba943ae89f84170ce6b6&oe=60A20ED7' }} style={{ width: 50, height: 50, borderRadius: 50 }} />
+        <Image source={{ uri: 'https://scontent-hkg4-2.xx.fbcdn.net/v/t1.6435-1/p200x200/181485075_288532339403436_5571309197348013484_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=7206a8&_nc_ohc=yRFUARG4vPwAX_2kD6A&_nc_ht=scontent-hkg4-2.xx&tp=6&oh=9249d8c824d1fec57712f0f0fc1eac88&oe=60B75293' }} style={{ width: 50, height: 50, borderRadius: 50 }} />
         <Text>Quy Nhơn, Bình Định</Text>
         <Text>25/04 - 30/04</Text>
       </View>

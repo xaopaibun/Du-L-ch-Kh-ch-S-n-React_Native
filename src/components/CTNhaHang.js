@@ -16,8 +16,12 @@ import { useSelector } from 'react-redux';
 const ScreenCTNhaHang = ({ navigation }) => {
     const Data = useSelector(state => state.chitietNhaHang);
     const Data_NhaHang = useSelector(state => state.data_NhaHang);
+    const dispatch = useDispatch();
     const renderItem = ({ item }) => (
-        <View style={{ height: 250, width: 160, marginRight: 16, justifyContent: 'space-between' }}>
+        <TouchableOpacity onPress={() => {
+            dispatch({ type: 'ChiTietKhachSan', data: item });
+            navigation.navigate('ScreenChiTietKhachSan');
+        }} style={{ height: 250, width: 160, marginRight: 16, justifyContent: 'space-between' }}>
             <View style={{ flex: 3 }}>
                 <Image source={{ uri: item.images[0] }} style={{ width: 160, height: 150, borderRadius: 5 }} />
             </View>
@@ -36,7 +40,7 @@ const ScreenCTNhaHang = ({ navigation }) => {
                 <Text style={{ color: '#3076FE', fontSize: 10 }}><Image source={require('../assets/images/Vector.png')} style={{ width: 7, height: 10 }} /> {item.DiaChi}</Text>
                 <Text style={{ fontWeight: '500', fontSize: 12, color: '#FF2424' }}>{item.Gia}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 
     return (

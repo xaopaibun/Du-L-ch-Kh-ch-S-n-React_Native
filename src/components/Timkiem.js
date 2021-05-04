@@ -90,7 +90,9 @@ const ScreenTimKiem = ({ navigation }, props) => {
                 <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{ color: '#B6B6B6' }}>Huỷ</Text></TouchableOpacity>
             </View>
             <View style={{ backgroundColor: '#F7F7F7', flex: 9 }}>
-                {/* <Text>{ThongBao}</Text> */}
+                {
+                    KQ.length == 0 ? <Text style={{fontSize: 12, textAlign: 'center', marginVertical: 100}}>Chưa có kết quả nào</Text>
+                :
                 <FlatList
                     data={TuKhoa == '' ? KQ : data}
                     keyExtractor={item => item.iD}
@@ -123,7 +125,7 @@ const ScreenTimKiem = ({ navigation }, props) => {
                         );
                     }}
                 />
-
+                }
 
             </View>
         </SafeAreaView>
