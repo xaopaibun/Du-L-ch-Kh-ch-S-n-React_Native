@@ -19,6 +19,9 @@ const ScreenCapNhatThongTin = ({ navigation }) => {
     const [Focus1, setFocus1] = React.useState(false);
     const [Focus2, setFocus2] = React.useState(false);
     const SDT = useSelector(state => state.SDT)
+    const [Ho, setHo] = React.useState('');
+    const [Ten, setTen] = React.useState('');
+    const dispatch = useDispatch();
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.Box}>
@@ -30,6 +33,7 @@ const ScreenCapNhatThongTin = ({ navigation }) => {
                         onBlur={() => setFocus(false)}
                         autoFocus={true}
                         placeholder='Họ'
+                        onChangeText ={(val) => setHo(val)}
                         placeholderTextColor='#BDBDBD' />
                 </View>
                 <View style={[styles.View_input, { borderBottomColor: Focus1 ? '#F17A4F' : '#E0E0E0' }]}>
@@ -37,6 +41,7 @@ const ScreenCapNhatThongTin = ({ navigation }) => {
                         onFocus={() => setFocus1(true)}
                         onBlur={() => setFocus1(false)}
                         placeholder='Tên'
+                        onChangeText ={(val) => setTen(val)}
                         placeholderTextColor='#BDBDBD' />
                 </View>
                 <View style={[styles.View_input, { borderBottomColor: Focus2 ? '#F17A4F' : '#E0E0E0' }]}>
@@ -49,7 +54,10 @@ const ScreenCapNhatThongTin = ({ navigation }) => {
                 </View>
             </View>
             <View style={styles.Box}>
-                <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.Button}>
+                <TouchableOpacity onPress={() => {
+                    dispatch({type: 'Send_HoTen', hoten : Ho + ' '+ Ten})
+                    navigation.navigate('Home');
+                }} style={styles.Button}>
                     <Text style={styles.Text_Button}>Hoàn Thành</Text>
                 </TouchableOpacity>
                 <Text style={{ color: '#565656', fontSize: 8, textAlign: 'center' }}>Bằng cách tham gia OKGO, bạn đã đồng ý với <Text onPress={() => navigation.navigate('ScreenChinhSachBaoMat')} style={{ textDecorationLine: 'underline', color: '#565656', fontSize: 8 }}>Chính sách bảo mật và Điều khoản sử dụng</Text> của chúng tôi</Text>

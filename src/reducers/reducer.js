@@ -25,7 +25,9 @@ const initState = {
         '1.000.000 - 2.000.000 đ', '3.000.000 - 5.000.000 đ'
     ],
     soluongsao: 0,
-    active_CalendarPicker: false
+    active_CalendarPicker: false,
+    hoten : 'Phạm Jin',
+    gmail: 'Vanquy33338888@gmail.com'
 };
 const reducer = (state = initState, action) => {
     switch (action.type) {
@@ -90,6 +92,10 @@ const reducer = (state = initState, action) => {
             return { ...state, typescreen : action.value }
         case 'active_CalendarPicker':
             return { ...state, active_CalendarPicker : action.active }
+        case 'Submit_editprofile':
+            return { ...state, hoten : action.hoten, gmail: action.gmail , img : action.img}
+        case 'Send_HoTen':
+            return { ...state, hoten : action.hoten }
         default:
             return state
     }

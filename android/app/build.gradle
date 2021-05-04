@@ -124,7 +124,8 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -132,6 +133,8 @@ android {
 
     defaultConfig {
         applicationId "com.dulich_vanquy"
+        vectorDrawables.useSupportLibrary = true
+        targetSdkVersion 27
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
