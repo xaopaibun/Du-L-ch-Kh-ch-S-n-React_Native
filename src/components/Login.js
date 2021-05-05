@@ -166,7 +166,7 @@ const ScreenLogin = ({ navigation }) => {
           </View>
         </View>
       </LinearGradient>
-      <ImageBackground source={require('../assets/images/hinhnenlogin.png')} resizeMode='stretch' style={{ flex: 1 }}></ImageBackground>
+      <ImageBackground source={require('../assets/images/login.jpg')} resizeMode='stretch' style={{ flex: 1 }}></ImageBackground>
     </View>
   );
 }

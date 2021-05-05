@@ -42,7 +42,7 @@ const SplashScreen = () => {
           <Image source={require('../assets/images/logo1.png')} style={{ width: 77, height: 98, resizeMode: 'stretch' }} />
           <Image source={require('../assets/images/logo2.png')} style={{ marginVertical: 20, width: 77, height: 20, resizeMode: 'stretch' }} />
         </View>
-        <ImageBackground resizeMode='stretch' source={require('../assets/images/Main.png')} style={{ width: '100%', height: '100%' }} />
+        <ImageBackground resizeMode='stretch' source={require('../assets/images/Frame.png')} style={{ width: '100%', height: '100%' }} />
       </View>
       <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ color: '#4F3018', fontSize: 12 }}>Welcome!</Text>
