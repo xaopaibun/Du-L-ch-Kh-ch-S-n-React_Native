@@ -13,7 +13,11 @@ import {
   FlatList,
   Alert,
 } from 'react-native';
+import { useHeaderHeight } from '@react-navigation/stack';
 const ThongBao =() =>{
+  const header = useHeaderHeight()
+  console.log(header)
+  
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
                 <View style={{height: 40, alignItems: 'center', flexDirection:'row', paddingHorizontal: 16, justifyContent:'space-between', marginVertical: 10, backgroundColor: '#ffffff'}}>
