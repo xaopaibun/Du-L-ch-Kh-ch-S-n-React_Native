@@ -86,7 +86,7 @@ const ScreenTimKiem = ({ navigation }, props) => {
                 <TouchableOpacity style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={require('../assets/images/timkiem.png')} style={{ width: 12, height: 12 }} />
                 </TouchableOpacity>
-                <TextInput onChangeText={(val) => onChange(val)} style={{ flex: 8 }} placeholder="Bạn muốn đi đâu" placeholderTextColor='#B6B6B6' />
+                <TextInput onChangeText={(val) => onChange(val)} style={{ flex: 8 }} placeholder="Bạn muốn đi đâu hả bạn?" placeholderTextColor='#B6B6B6' />
                 <TouchableOpacity onPress={() => navigation.goBack()}><Text style={{ color: '#B6B6B6' }}>Huỷ</Text></TouchableOpacity>
             </View>
             <View style={{ backgroundColor: '#F7F7F7', flex: 9 }}>
